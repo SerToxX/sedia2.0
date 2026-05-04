@@ -479,13 +479,12 @@ textarea{
 
 /* BOTTOM */
 
-.class-proyectos-form-bottom{
-
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-start;
-    margin-top:80px;
-
+.class-proyectos-form-bottom {
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 80px;
+    display: flex;
+    grid-column: 1 / -1;
 }
 
 /* BOTON ARCHIVO */
