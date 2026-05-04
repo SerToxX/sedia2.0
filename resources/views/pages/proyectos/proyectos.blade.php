@@ -246,12 +246,6 @@
                 <label>Comentanos de tu proyecto</label>
                 <textarea name="mensaje" required></textarea>
             </div>
-            <div class="form-group full">
-                <label>Archivos (Máx. 20 archivos, total 50MB)</label>
-                <input type="file" name="archivos[]" id="archivosInput" style="display: none;" multiple accept=".jpg,.jpeg,.png,.gif,.pdf,.doc,.docx,.xls,.xlsx,.zip,.rar">
-                <div id="archivosList" class="class-proyectos-archivos-list"></div>
-                <p id="archivosTotal" class="class-proyectos-archivos-total">Total: 0.00 MB / 50.00 MB</p>
-            </div>
             <div class="class-proyectos-form-bottom">
                 <button type="button" class="btn-file" id="btnSelectFiles">
                     Seleccionar archivos
@@ -259,6 +253,12 @@
                 <button type="submit" class="btn-submit" id="btnSubmit">
                     ENVIAR
                 </button>
+            </div>
+            <div class="form-group full">
+                <label>Archivos (Máx. 20 archivos, total 50MB)</label>
+                <input type="file" name="archivos[]" id="archivosInput" style="display: none;" multiple accept=".jpg,.jpeg,.png,.gif,.pdf,.doc,.docx,.xls,.xlsx,.zip,.rar">
+                <div id="archivosList" class="class-proyectos-archivos-list"></div>
+                <p id="archivosTotal" class="class-proyectos-archivos-total">Total: 0.00 MB / 50.00 MB</p>
             </div>
         </form>
 
