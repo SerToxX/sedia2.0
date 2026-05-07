@@ -2,7 +2,6 @@
 
 .class-reclamaciones-section{
     width: 100%;
-    background-color: #F5F5F5;
     padding: 70px 40px;
     overflow: hidden;
 }
@@ -130,7 +129,7 @@
 }
 
 /* =========================================
-   FORMULARIO
+   FORM SECTION
 ========================================= */
 
 .class-reclamaciones-form-section{
@@ -156,9 +155,7 @@
     align-items: flex-start;
 }
 
-/* =========================================
-   STEP ITEM
-========================================= */
+/* STEP ITEM */
 
 .class-reclamaciones-step-item{
     width: 180px;
@@ -168,9 +165,7 @@
     align-items: center;
 }
 
-/* =========================================
-   TOP
-========================================= */
+/* TOP */
 
 .class-reclamaciones-step-top{
     width: 100%;
@@ -179,9 +174,7 @@
     align-items: center;
 }
 
-/* =========================================
-   LINE
-========================================= */
+/* LINE */
 
 .class-reclamaciones-step-line{
     flex: 1;
@@ -197,9 +190,7 @@
     background-color: #B8C1A8;
 }
 
-/* =========================================
-   CIRCLE
-========================================= */
+/* CIRCLE */
 
 .class-reclamaciones-step-circle{
     width: 30px;
@@ -231,9 +222,7 @@
     color: #B8C1A8;
 }
 
-/* =========================================
-   LABEL
-========================================= */
+/* LABEL */
 
 .class-reclamaciones-step-label{
     width: 100%;
@@ -260,7 +249,7 @@
 }
 
 /* =========================================
-   FORM GRID
+   FORM
 ========================================= */
 
 .class-reclamaciones-form{
@@ -287,7 +276,7 @@
     width: 100%;
 
     display: grid;
-    grid-template-columns: 1fr 1fr 2fr;
+    grid-template-columns: 0.6fr 1fr 2fr;
 
     gap: 30px;
 
@@ -313,6 +302,16 @@
     font-weight: 400;
 
     color: #7C7878;
+}
+
+.class-reclamaciones-label-bold{
+    margin-bottom: 16px;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+
+    color: #000000;
 }
 
 /* =========================================
@@ -355,6 +354,173 @@
 }
 
 /* =========================================
+   RADIO
+========================================= */
+
+.class-reclamaciones-radio-group{
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.class-reclamaciones-radio-title{
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #000000;
+}
+
+.class-reclamaciones-radio-title-hidden{
+    opacity: 0;
+}
+
+.class-reclamaciones-radio-item{
+    display: flex;
+    align-items: flex-start;
+    gap: 22px;
+    cursor: pointer;
+}
+
+/* INPUT REAL */
+
+.class-reclamaciones-radio-input{
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* CIRCULO */
+
+.class-reclamaciones-radio-circle{
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+
+    border-radius: 50%;
+    border: 2px solid #B7B7B7;
+
+    background-color: transparent;
+
+    position: relative;
+
+    transition: all 0.25s ease;
+}
+
+/* ACTIVO */
+
+.class-reclamaciones-radio-input:checked
++ .class-reclamaciones-radio-circle{
+
+    border-color: #B8C1A8;
+}
+
+/* CIRCULO INTERNO */
+
+.class-reclamaciones-radio-input:checked
++ .class-reclamaciones-radio-circle::after{
+
+    content: '';
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 20px;
+    height: 20px;
+
+    border-radius: 50%;
+
+
+    background-color: #B8C1A8;
+}
+
+.class-reclamaciones-radio-text{
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.8;
+
+    color: #000000;
+}
+
+/* =========================================
+   CHECKBOX
+========================================= */
+
+.class-reclamaciones-checkbox-item{
+    display: flex;
+    align-items: flex-start;
+
+    gap: 14px;
+
+    cursor: pointer;
+}
+
+.class-reclamaciones-checkbox-input{
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.class-reclamaciones-checkbox-square{
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+
+    border: 1px solid #B7B7B7;
+    border-radius: 4px;
+
+    background-color: transparent;
+
+    position: relative;
+
+    transition: all 0.25s ease;
+}
+
+/* =========================================
+   CHECKBOX ACTIVO
+========================================= */
+
+.class-reclamaciones-checkbox-input:checked
++ .class-reclamaciones-checkbox-square{
+
+    background-color: #F5F5F5;
+    border-color: #B8C1A8;
+}
+
+/* CHECK */
+
+.class-reclamaciones-checkbox-input:checked
++ .class-reclamaciones-checkbox-square::after{
+
+    content: '✓';
+
+    position: absolute;
+
+    top: 45%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    font-size: 14px;
+    font-weight: 600;
+
+    color: #B8C1A8;
+}
+
+.class-reclamaciones-checkbox-text{
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.7;
+
+    color: #000000;
+}
+
+/* =========================================
    ACTIONS
 ========================================= */
 
@@ -362,11 +528,55 @@
     width: 100%;
 
     display: flex;
-    justify-content: flex-end;
     align-items: center;
+    justify-content: space-between;
 
     margin-top: 80px;
 }
+
+/* BACK */
+
+.class-reclamaciones-back{
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    background: transparent;
+    border: none;
+
+    cursor: pointer;
+}
+
+.class-reclamaciones-back-circle{
+    width: 21px;
+    height: 21px;
+    min-width: 21px;
+
+    border-radius: 50%;
+    border: 2px solid #AFAFAF;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.class-reclamaciones-back-icon{
+    font-size: 11px;
+    line-height: 1;
+
+    color: #AFAFAF;
+}
+
+.class-reclamaciones-back-text{
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+
+    color: #AFAFAF;
+}
+
+/* NEXT */
 
 .class-reclamaciones-next{
     display: flex;
@@ -406,6 +616,31 @@
     line-height: 1;
 
     color: #AFAFAF;
+}
+
+/* SUBMIT */
+
+.class-reclamaciones-next-submit{
+    width: 147px;
+    height: 49px;
+
+    background-color: #B8C1A8;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+
+    cursor: pointer;
+}
+
+.class-reclamaciones-next-submit-text{
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+
+    color: #FFFFFF;
 }
 
 /* =========================================
@@ -480,7 +715,7 @@
     }
 
     .class-reclamaciones-steps-content{
-        padding: 55px 100px 0;
+        padding: 55px 0px 0;
     }
 
 }
@@ -624,10 +859,36 @@
         font-size: 15px;
     }
 
+    /* RADIO */
+
+    .class-reclamaciones-radio-item{
+        gap: 16px;
+    }
+
+    .class-reclamaciones-radio-text{
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    /* CHECK */
+
+    .class-reclamaciones-checkbox-text{
+        font-size: 13px;
+    }
+
     /* ACTIONS */
 
     .class-reclamaciones-actions{
         margin-top: 60px;
+    }
+
+    .class-reclamaciones-next-submit{
+        width: 120px;
+        height: 45px;
+    }
+
+    .class-reclamaciones-next-submit-text{
+        font-size: 18px;
     }
 
     /* SUCCESS */

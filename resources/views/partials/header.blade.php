@@ -15,10 +15,23 @@
 
         <!-- DERECHA -->
         <div class="class-header-right">
-            <span class="class-header-cart-text">CARRITO</span>
-            <span class="class-header-cart-count">1</span>
-        </div>
 
+            <!-- LUPA -->
+            <a href="/buscar" class="class-header-search-icon">
+                <img src="image/icon-search.png" alt="Buscar">
+            </a>
+
+            <!-- CARRITO -->
+            <a href="/carrito" class="class-header-cart-icon">
+                <img src="image/icon-cart.png" alt="Carrito">
+            </a>
+
+            <!-- CONTADOR -->
+            <div class="class-header-cart-count">
+                1
+            </div>
+
+        </div>
     </nav>
 
 </header>
@@ -52,23 +65,23 @@
                 Nosotros
             </div>
 
-            <a class="class-menu-link {{ request()->routeIs('nosotros') ? 'active' : '' }}" 
-            href="{{ route('nosotros') }}">
+            <a class="class-menu-link {{ request()->routeIs('nosotros') ? 'active' : '' }}"
+                href="{{ route('nosotros') }}">
                 Sobre nosotros
             </a>
 
-            <a class="class-menu-link {{ request()->routeIs('proyectos') ? 'active' : '' }}" 
-            href="{{ route('proyectos') }}">
+            <a class="class-menu-link {{ request()->routeIs('proyectos') ? 'active' : '' }}"
+                href="{{ route('proyectos') }}">
                 Proyectos
             </a>
 
-            <a class="class-menu-link {{ request()->routeIs('contacto') ? 'active' : '' }}" 
-            href="{{ route('contacto') }}">
+            <a class="class-menu-link {{ request()->routeIs('contacto') ? 'active' : '' }}"
+                href="{{ route('contacto') }}">
                 Contáctanos
             </a>
 
-            <a class="class-menu-link {{ request()->routeIs('blog') ? 'active' : '' }}" 
-            href="{{ route('contacto') }}">
+            <a class="class-menu-link {{ request()->routeIs('blog') ? 'active' : '' }}"
+                href="{{ route('contacto') }}">
                 Blog
             </a>
 
@@ -82,13 +95,13 @@
                 Productos
             </div>
 
-            <a class="class-menu-link {{ request()->is('productos/promociones') ? 'active' : '' }}" 
-            href="/productos/promociones">
+            <a class="class-menu-link {{ request()->is('productos/promociones') ? 'active' : '' }}"
+                href="/productos/promociones">
                 Promociones
             </a>
 
-            <a class="class-menu-link {{ request()->routeIs('productos') ? 'active' : '' }}" 
-            href="{{ route('productos') }}">
+            <a class="class-menu-link {{ request()->routeIs('productos') ? 'active' : '' }}"
+                href="{{ route('productos') }}">
                 Productos
             </a>
 
@@ -129,13 +142,13 @@
             </div>
 
 
-            <a class="class-menu-link {{ request()->is('productos/bases-mesa') ? 'active' : '' }}" 
-            href="/productos/bases-mesa">
+            <a class="class-menu-link {{ request()->is('productos/bases-mesa') ? 'active' : '' }}"
+                href="/productos/bases-mesa">
                 Bases de mesa
             </a>
 
-            <a class="class-menu-link {{ request()->is('productos/tableros-mesa') ? 'active' : '' }}" 
-            href="/productos/tableros-mesa">
+            <a class="class-menu-link {{ request()->is('productos/tableros-mesa') ? 'active' : '' }}"
+                href="/productos/tableros-mesa">
                 Tableros de mesa
             </a>
 
@@ -156,3 +169,53 @@
     </div>
 
 </aside>
+<script>
+let lastScroll = 0;
+const header = document.querySelector(".class-header-container");
+const headerHeight = header ? header.offsetHeight : 100;
+/* PAGINAS TRANSPARENTES */
+const transparentPages =
+    document.body.classList.contains("class-home") ||
+    document.body.classList.contains("class-proyectos-page") ||
+    document.body.classList.contains("class-sobre-nosotros-page");
+window.addEventListener("scroll", () => {
+    const currentScroll = window.pageYOffset;
+    /* ARRIBA DEL TODO: transparente, visible */
+    if (currentScroll <= 0) {
+        header.classList.remove("class-header-hidden");
+        if (transparentPages) {
+            header.classList.remove("class-header-scrolled");
+        }
+        lastScroll = currentScroll;
+        return;
+    }
+    const isScrollingDown = currentScroll > lastScroll + 5;
+    const isScrollingUp = currentScroll < lastScroll - 5;
+    /* PAGINAS TRANSPARENTES */
+    if (transparentPages) {
+        if (isScrollingDown) {
+            /* Mientras baja y aún se ve el header: mantener transparente */
+            if (currentScroll <= headerHeight) {
+                header.classList.remove("class-header-scrolled");
+                header.classList.remove("class-header-hidden");
+            } else {
+                /* Ya dejó de verse: ocultar con efecto */
+                header.classList.add("class-header-hidden");
+            }
+        } else if (isScrollingUp) {
+            /* Al subir: mostrar blanco con borde */
+            header.classList.remove("class-header-hidden");
+            header.classList.add("class-header-scrolled");
+        }
+    } else {
+        /* Paginas normales: siempre blanco con borde */
+        header.classList.add("class-header-scrolled");
+        if (isScrollingDown && currentScroll > headerHeight) {
+            header.classList.add("class-header-hidden");
+        } else if (isScrollingUp) {
+            header.classList.remove("class-header-hidden");
+        }
+    }
+    lastScroll = currentScroll;
+});
+</script>

@@ -10,10 +10,7 @@
 
     <div class="class-reclamaciones-container">
 
-        {{-- =========================================
-             HEADER
-        ========================================== --}}
-
+        {{-- HEADER --}}
         <div class="class-reclamaciones-header">
 
             <h1 class="class-reclamaciones-title">
@@ -31,10 +28,7 @@
 
     </div>
 
-    {{-- =========================================
-         PASOS TEXTO
-    ========================================== --}}
-
+    {{-- PASOS --}}
     <div class="class-reclamaciones-steps-wrapper">
 
         <div class="class-reclamaciones-steps-title-container">
@@ -73,10 +67,7 @@
 
         <div class="class-reclamaciones-form-section">
 
-            {{-- =========================================
-                 PROGRESS
-            ========================================== --}}
-
+            {{-- PROGRESS --}}
             <div
                 class="class-reclamaciones-steps-progress"
                 id="class-reclamaciones-progress"
@@ -154,10 +145,7 @@
 
             </div>
 
-            {{-- =========================================
-                 FORM
-            ========================================== --}}
-
+            {{-- FORM --}}
             <form
                 class="class-reclamaciones-form"
                 id="class-reclamaciones-form"
@@ -195,9 +183,7 @@
 
                                 <select class="class-reclamaciones-select">
 
-                                    <option value="">
-                                       
-                                    </option>
+                                    <option value=""></option>
 
                                     <option value="dni">
                                         DNI
@@ -272,7 +258,7 @@
 
                     </div>
 
-                    {{-- BOTTOM --}}
+                    {{-- ROW 3 --}}
                     <div class="class-reclamaciones-form-row-3">
 
                         <div class="class-reclamaciones-field">
@@ -400,11 +386,38 @@
 
                     <div class="class-reclamaciones-form-grid">
 
+                        {{-- LEFT --}}
                         <div class="class-reclamaciones-form-column">
+
+                            <div class="class-reclamaciones-radio-group">
+
+                                <h3 class="class-reclamaciones-radio-title">
+                                    Selecciona una opción:
+                                </h3>
+
+                                <label class="class-reclamaciones-radio-item">
+
+                                    <input
+                                        type="radio"
+                                        name="tipo_reclamo"
+                                        class="class-reclamaciones-radio-input"
+                                    >
+
+                                    <span class="class-reclamaciones-radio-circle"></span>
+
+                                    <span class="class-reclamaciones-radio-text">
+                                        <strong>Reclamo:</strong>
+                                        disconformidad relacionada directamente
+                                        con el producto o servicio adquirido.
+                                    </span>
+
+                                </label>
+
+                            </div>
 
                             <div class="class-reclamaciones-field">
 
-                                <label class="class-reclamaciones-label">
+                                <label class="class-reclamaciones-label-bold">
                                     Descripción
                                 </label>
 
@@ -415,13 +428,56 @@
 
                             </div>
 
+                            <label class="class-reclamaciones-checkbox-item">
+
+                                <input
+                                    type="checkbox"
+                                    class="class-reclamaciones-checkbox-input"
+                                >
+
+                                <span class="class-reclamaciones-checkbox-square"></span>
+
+                                <span class="class-reclamaciones-checkbox-text">
+                                    Declaro haber leído y aceptado la Política
+                                    de Privacidad y los Términos y Condiciones de Sedia.
+                                </span>
+
+                            </label>
+
                         </div>
 
+                        {{-- RIGHT --}}
                         <div class="class-reclamaciones-form-column">
+
+                            <div class="class-reclamaciones-radio-group">
+
+                                <h3 class="class-reclamaciones-radio-title-hidden">
+                                    .
+                                </h3>
+
+                                <label class="class-reclamaciones-radio-item">
+
+                                    <input
+                                        type="radio"
+                                        name="tipo_reclamo"
+                                        class="class-reclamaciones-radio-input"
+                                    >
+
+                                    <span class="class-reclamaciones-radio-circle"></span>
+
+                                    <span class="class-reclamaciones-radio-text">
+                                        <strong>Queja:</strong>
+                                        malestar o descontento no vinculado
+                                        al producto o servicio.
+                                    </span>
+
+                                </label>
+
+                            </div>
 
                             <div class="class-reclamaciones-field">
 
-                                <label class="class-reclamaciones-label">
+                                <label class="class-reclamaciones-label-bold">
                                     Pedido o solución solicitada
                                 </label>
 
@@ -431,6 +487,22 @@
                                 ></textarea>
 
                             </div>
+
+                            <label class="class-reclamaciones-checkbox-item">
+
+                                <input
+                                    type="checkbox"
+                                    class="class-reclamaciones-checkbox-input"
+                                >
+
+                                <span class="class-reclamaciones-checkbox-square"></span>
+
+                                <span class="class-reclamaciones-checkbox-text">
+                                    Declaro que la información proporcionada
+                                    es verdadera y corresponde a mi experiencia de consumo.
+                                </span>
+
+                            </label>
 
                         </div>
 
@@ -467,6 +539,28 @@
                     id="class-reclamaciones-actions"
                 >
 
+                    {{-- ATRAS --}}
+                    <button
+                        type="button"
+                        class="class-reclamaciones-back"
+                        id="class-reclamaciones-back"
+                    >
+
+                        <div class="class-reclamaciones-back-circle">
+
+                            <span class="class-reclamaciones-back-icon">
+                                &#10094;
+                            </span>
+
+                        </div>
+
+                        <span class="class-reclamaciones-back-text">
+                            Atrás
+                        </span>
+
+                    </button>
+
+                    {{-- NEXT --}}
                     <button
                         type="button"
                         class="class-reclamaciones-next"
@@ -480,7 +574,7 @@
                         <div class="class-reclamaciones-next-circle">
 
                             <span class="class-reclamaciones-next-icon">
-                                →
+                                &#10095;
                             </span>
 
                         </div>
@@ -511,19 +605,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const nextButton = document.getElementById('class-reclamaciones-next')
 
+    const backButton = document.getElementById('class-reclamaciones-back')
+
     const progress = document.getElementById('class-reclamaciones-progress')
 
     const success = document.getElementById('class-reclamaciones-success')
 
     const actions = document.getElementById('class-reclamaciones-actions')
 
-    /*
-    ==========================================
-    UPDATE UI
-    ==========================================
-    */
-
-    function updateStepsUI(){
+    function updateUI(){
 
         /*
         ==========================================
@@ -540,10 +630,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const label = step.querySelector('.class-reclamaciones-step-label')
 
             const lines = step.querySelectorAll('.class-reclamaciones-step-line')
-
-            /*
-            RESET
-            */
 
             circle.classList.remove(
                 'class-reclamaciones-step-circle-active',
@@ -575,10 +661,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 label.classList.add(
                     'class-reclamaciones-step-label-active'
                 )
-
-                /*
-                LEFT + RIGHT
-                */
 
                 lines.forEach(line => {
 
@@ -648,21 +730,55 @@ document.addEventListener('DOMContentLoaded', () => {
 
         /*
         ==========================================
-        BUTTON TEXT
+        BUTTONS
         ==========================================
         */
 
-        if(currentStep === totalSteps){
+        if(currentStep === 1){
 
-            document.querySelector(
-                '.class-reclamaciones-next-text'
-            ).innerText = 'Enviar'
+            backButton.style.visibility = 'hidden'
 
         }else{
 
-            document.querySelector(
-                '.class-reclamaciones-next-text'
-            ).innerText = 'Siguiente'
+            backButton.style.visibility = 'visible'
+
+        }
+
+        /*
+        ENVIAR
+        */
+
+        if(currentStep === 3){
+
+            nextButton.classList.add(
+                'class-reclamaciones-next-submit'
+            )
+
+            nextButton.innerHTML = `
+                <span class="class-reclamaciones-next-submit-text">
+                    ENVIAR
+                </span>
+            `
+
+        }else{
+
+            nextButton.classList.remove(
+                'class-reclamaciones-next-submit'
+            )
+
+            nextButton.innerHTML = `
+                <span class="class-reclamaciones-next-text">
+                    Siguiente
+                </span>
+
+                <div class="class-reclamaciones-next-circle">
+
+                    <span class="class-reclamaciones-next-icon">
+                        &#10095;
+                    </span>
+
+                </div>
+            `
 
         }
 
@@ -680,13 +796,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
             currentStep++
 
-            updateStepsUI()
+            updateUI()
 
         }else{
-
-            /*
-            HIDE
-            */
 
             progress.style.display = 'none'
 
@@ -698,11 +810,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
             actions.style.display = 'none'
 
-            /*
-            SHOW SUCCESS
-            */
-
             success.style.display = 'flex'
+
+        }
+
+    })
+
+    /*
+    ==========================================
+    BACK
+    ==========================================
+    */
+
+    backButton.addEventListener('click', () => {
+
+        if(currentStep > 1){
+
+            currentStep--
+
+            updateUI()
 
         }
 
@@ -714,7 +840,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ==========================================
     */
 
-    updateStepsUI()
+    updateUI()
 
 })
 
