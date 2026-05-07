@@ -35,5 +35,9 @@ Route::get('/sobre-nosotros', function () {
     return view('pages.sobre-nosotros.sobre-nosotros');
 })->name('nosotros');
 
+Route::get('/libro-reclamaciones', function () {
+    return view('pages.libro-reclamaciones.libro-reclamaciones');
+})->name('libro-reclamaciones');
+
 Route::post('/contacto', [ContactoController::class, 'enviar'])
     ->name('contacto.enviar');

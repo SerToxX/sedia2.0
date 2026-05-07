@@ -51,7 +51,11 @@
                         Términos y condiciones
                     </a>
                 </li>
-                <li>Libro de reclamaciones</li>
+                <li>
+                    <a href="{{ route('libro-reclamaciones') }}">
+                        Libro de reclamaciones
+                    </a>
+                </li>
             </ul>
 
         </div>
