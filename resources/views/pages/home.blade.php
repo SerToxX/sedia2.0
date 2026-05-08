@@ -326,32 +326,8 @@ Comedor Exterior
 
 
 
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-
-        const video = document.querySelector(".class-hero-video")
-
-        if (!video) return
-
-        const observer = new IntersectionObserver((entries) => {
-
-            entries.forEach(entry => {
-
-                if (entry.isIntersecting) {
-                    video.play()
-                } else {
-                    video.pause()
-                }
-
-            })
-
-        }, {
-            threshold: 0.2
-        })
-
-        observer.observe(video)
-
-    })
-</script>
+@push('scripts')
+    @vite('resources/js/home.js')
+@endpush
 
 @endsection

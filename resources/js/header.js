@@ -42,3 +42,57 @@ document.querySelectorAll(".class-menu-dropdown").forEach(item=>{
 
 })
 
+/* =========================
+HEADER SCROLL
+========================= */
+
+let lastScroll = 0
+const header = document.querySelector(".class-header-container")
+
+if (header) {
+    const headerHeight = header.offsetHeight || 100
+    const transparentPages =
+        document.body.classList.contains("class-home") ||
+        document.body.classList.contains("class-proyectos-page") ||
+        document.body.classList.contains("class-sobre-nosotros-page")
+
+    window.addEventListener("scroll", () => {
+        const currentScroll = window.pageYOffset
+
+        if (currentScroll <= 0) {
+            header.classList.remove("class-header-hidden")
+            if (transparentPages) {
+                header.classList.remove("class-header-scrolled")
+            }
+            lastScroll = currentScroll
+            return
+        }
+
+        const isScrollingDown = currentScroll > lastScroll + 5
+        const isScrollingUp = currentScroll < lastScroll - 5
+
+        if (transparentPages) {
+            if (isScrollingDown) {
+                if (currentScroll <= headerHeight) {
+                    header.classList.remove("class-header-scrolled")
+                    header.classList.remove("class-header-hidden")
+                } else {
+                    header.classList.add("class-header-hidden")
+                }
+            } else if (isScrollingUp) {
+                header.classList.remove("class-header-hidden")
+                header.classList.add("class-header-scrolled")
+            }
+        } else {
+            header.classList.add("class-header-scrolled")
+            if (isScrollingDown && currentScroll > headerHeight) {
+                header.classList.add("class-header-hidden")
+            } else if (isScrollingUp) {
+                header.classList.remove("class-header-hidden")
+            }
+        }
+
+        lastScroll = currentScroll
+    })
+}
+

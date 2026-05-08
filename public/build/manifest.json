@@ -1,6 +1,6 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-BrA7-Aum.css",
+    "file": "assets/app-DCP4Yfky.css",
     "src": "resources/css/app.css",
     "isEntry": true,
     "name": "app",
@@ -19,9 +19,21 @@
     "isEntry": true
   },
   "resources/js/header.js": {
-    "file": "assets/header-gSX6zaj6.js",
+    "file": "assets/header-Ba3oogV3.js",
     "name": "header",
     "src": "resources/js/header.js",
+    "isEntry": true
+  },
+  "resources/js/home.js": {
+    "file": "assets/home-Be0R4Ylr.js",
+    "name": "home",
+    "src": "resources/js/home.js",
+    "isEntry": true
+  },
+  "resources/js/libro-reclamaciones.js": {
+    "file": "assets/libro-reclamaciones-pkkdRKv4.js",
+    "name": "libro-reclamaciones",
+    "src": "resources/js/libro-reclamaciones.js",
     "isEntry": true
   },
   "resources/js/politicas-devolucion.js": {
@@ -34,6 +46,12 @@
     "file": "assets/preguntas-frecuentes-DaT_HVNR.js",
     "name": "preguntas-frecuentes",
     "src": "resources/js/preguntas-frecuentes.js",
+    "isEntry": true
+  },
+  "resources/js/proyectos.js": {
+    "file": "assets/proyectos-eBD09tPQ.js",
+    "name": "proyectos",
+    "src": "resources/js/proyectos.js",
     "isEntry": true
   },
   "resources/js/terminos-condiciones.js": {

@@ -12,7 +12,10 @@ export default defineConfig({
                 'resources/js/preguntas-frecuentes.js',
                 'resources/js/politicas-devolucion.js',
                 'resources/js/terminos-condiciones.js',
-                'resources/js/header.js'
+                'resources/js/header.js',
+                'resources/js/home.js',
+                'resources/js/proyectos.js',
+                'resources/js/libro-reclamaciones.js'
             ],
             refresh: true,
         }),
