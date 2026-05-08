@@ -41,6 +41,30 @@ HEADER TRANSPARENTE
     box-shadow: none !important;
 }
 
+/* ========================================
+ELEMENTOS BLANCOS EN HEADER TRANSPARENTE
+======================================== */
+.class-home .class-header-container:not(.class-header-scrolled) .class-header-left,
+.class-proyectos-page .class-header-container:not(.class-header-scrolled) .class-header-left,
+.class-sobre-nosotros-page .class-header-container:not(.class-header-scrolled) .class-header-left,
+.class-home .class-header-container:not(.class-header-scrolled) .class-header-logo,
+.class-proyectos-page .class-header-container:not(.class-header-scrolled) .class-header-logo,
+.class-sobre-nosotros-page .class-header-container:not(.class-header-scrolled) .class-header-logo,
+.class-home .class-header-container:not(.class-header-scrolled) .class-header-cart-count,
+.class-proyectos-page .class-header-container:not(.class-header-scrolled) .class-header-cart-count,
+.class-sobre-nosotros-page .class-header-container:not(.class-header-scrolled) .class-header-cart-count {
+    color: #FFFFFF;
+}
+/* Íconos de búsqueda y carrito en blanco cuando el header es transparente */
+.class-home .class-header-container:not(.class-header-scrolled) .class-header-search-icon img,
+.class-home .class-header-container:not(.class-header-scrolled) .class-header-cart-icon img,
+.class-proyectos-page .class-header-container:not(.class-header-scrolled) .class-header-search-icon img,
+.class-proyectos-page .class-header-container:not(.class-header-scrolled) .class-header-cart-icon img,
+.class-sobre-nosotros-page .class-header-container:not(.class-header-scrolled) .class-header-search-icon img,
+.class-sobre-nosotros-page .class-header-container:not(.class-header-scrolled) .class-header-cart-icon img {
+    filter: brightness(0) invert(1);
+}
+
 /* HEADER BLANCO AL SCROLL */
 
 .class-header-scrolled {
