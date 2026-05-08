@@ -42,28 +42,28 @@ class ContactoController extends Controller
                     'archivos.*.mimes' => 'Uno de los archivos tiene un tipo no permitido. Permitidos: jpg, jpeg, png, gif, pdf, doc, docx, xls, xlsx, zip, rar.'
                 ]
             );
-            // Validación total acumulado: 50MB para todos los archivos
+            // Validación total acumulado: 15MB para todos los archivos
             $totalBytes = 0;
             if ($request->hasFile('archivos')) {
                 foreach ($request->file('archivos') as $archivo) {
                     $totalBytes += $archivo->getSize();
                 }
             }
-            $maxTotalBytes = 50 * 1024 * 1024; // 50MB
+            $maxTotalBytes = 15 * 1024 * 1024; // 15MB
             if ($totalBytes > $maxTotalBytes) {
                 $totalMb = round($totalBytes / (1024 * 1024), 2);
                 if ($request->ajax()) {
                     return response()->json([
                         'success' => false,
-                        'message' => "El total de archivos excede 50MB (actual: {$totalMb}MB).",
+                        'message' => "El total de archivos excede 15MB (actual: {$totalMb}MB).",
                         'errors' => [
-                            'archivos' => ["El total de archivos excede 50MB (actual: {$totalMb}MB)."]
+                            'archivos' => ["El total de archivos excede 15MB (actual: {$totalMb}MB)."]
                         ],
                         'missing_fields' => []
                     ], 422);
                 }
                 return back()
-                    ->withErrors(['archivos' => "El total de archivos excede 50MB (actual: {$totalMb}MB)."])
+                    ->withErrors(['archivos' => "El total de archivos excede 15MB (actual: {$totalMb}MB)."])
                     ->withInput();
             }
             $this->contactoService->enviarCorreo($request);

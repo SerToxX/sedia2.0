@@ -1,6 +1,6 @@
 (function () {
     const MAX_FILES = 20;
-    const MAX_TOTAL_BYTES = 50 * 1024 * 1024;
+    const MAX_TOTAL_BYTES = 15 * 1024 * 1024;
     const ALLOWED_EXTENSIONS = ['jpg', 'jpeg', 'png', 'gif', 'pdf', 'doc', 'docx', 'xls', 'xlsx', 'zip', 'rar'];
     const form = document.getElementById('formContactoProyectos');
 
@@ -119,7 +119,7 @@
             archivosList.appendChild(ul);
         }
         const totalBytes = getTotalBytes(selectedFiles);
-        archivosTotal.textContent = 'Total: ' + formatMB(totalBytes) + ' MB / 50.00 MB';
+        archivosTotal.textContent = 'Total: ' + formatMB(totalBytes) + ' MB / 15.00 MB';
     }
 
     function validateRequiredFields() {
@@ -152,7 +152,7 @@
         }
         const totalBytes = getTotalBytes(selectedFiles);
         if (totalBytes > MAX_TOTAL_BYTES) {
-            errors.push('El total de archivos excede 50MB (actual: ' + formatMB(totalBytes) + 'MB).');
+            errors.push('El total de archivos excede 15MB (actual: ' + formatMB(totalBytes) + 'MB).');
         }
         if (errors.length > 0) {
             setFieldError('archivos[]', true);

@@ -255,10 +255,10 @@
                 </button>
             </div>
             <div class="form-group full">
-                <label>Archivos (Máx. 20 archivos, total 50MB)</label>
+                <label>Archivos (Máx. 20 archivos, total 15MB)</label>
                 <input type="file" name="archivos[]" id="archivosInput" style="display: none;" multiple accept=".jpg,.jpeg,.png,.gif,.pdf,.doc,.docx,.xls,.xlsx,.zip,.rar">
                 <div id="archivosList" class="class-proyectos-archivos-list"></div>
-                <p id="archivosTotal" class="class-proyectos-archivos-total">Total: 0.00 MB / 50.00 MB</p>
+                <p id="archivosTotal" class="class-proyectos-archivos-total">Total: 0.00 MB / 15.00 MB</p>
             </div>
         </form>
 

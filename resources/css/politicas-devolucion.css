@@ -8,8 +8,8 @@ POLITICAS DE DEVOLUCION
 }
 
 .class-politicas-devolucion-container {
-    max-width: 1200px;
     margin: auto;
+    margin-top: 55px;
 
     display: grid;
     gap: 25px;
@@ -39,6 +39,7 @@ POLITICAS DE DEVOLUCION
 
     min-height: 220px;
 }
+
 
 /* TEXTO */
 
@@ -76,11 +77,8 @@ POLITICAS DE DEVOLUCION
 }
 
 
-/* .class-politicas-devolucion-text li{
-margin-bottom:14px;
-} */
-
 /* bloque 1 */
+
 .class-politicas-devolucion-card:nth-child(1) .class-politicas-devolucion-text li {
     margin-bottom: 14px;
 }
@@ -91,12 +89,14 @@ margin-bottom:14px;
 
 
 /* bloque 2 */
+
 .class-politicas-devolucion-card:nth-child(2) .class-politicas-devolucion-text li {
     margin-bottom: 0;
 }
 
 
 /* bloque 3 */
+
 .class-politicas-devolucion-card:nth-child(3) .class-politicas-devolucion-text li {
     margin-bottom: 14px;
 }
@@ -121,6 +121,7 @@ margin-bottom:14px;
     text-align: center;
     padding: 40px 20px;
 }
+
 
 /* ========================================
 PROCESO
@@ -151,76 +152,448 @@ PROCESO
 STEPS
 ======================================== */
 
-.class-politicas-devolucion-steps{
-display:flex;
-width:100%;
-margin-bottom:30px;
+/* ========================================
+TITULO STEPS
+======================================== */
+
+.class-politicas-devolucion-steps-title {
+
+    font-family: Poppins;
+    font-weight: 500;
+    font-size: 32px;
+    color: #323334;
+
+    text-align: center;
+
+    padding: 20px 0;
+    margin: 0 -40px 40px -40px;
+
+    border-top: 1px solid #DFDEDB;
+    border-bottom: 1px solid #DFDEDB;
 }
 
-.class-politicas-devolucion-step{
-flex:1;
-position:relative;
-cursor:pointer;
+.class-politicas-devolucion-steps {
+    display: flex;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.class-politicas-devolucion-step:not(:first-child){
-margin-left:-18px;
+.class-politicas-devolucion-step {
+    flex: 1;
+    position: relative;
+    cursor: pointer;
 }
+
+.class-politicas-devolucion-step:not(:first-child) {
+    margin-left: -18px;
+}
+
 
 /* SVG */
 
-.step-svg{
-width:100%;
-height:auto;
-aspect-ratio:350 / 60;
-display:block;
+.step-svg {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 350 / 60;
+    display: block;
 }
+
 
 /* figura */
 
-.step-shape{
-fill:white;
-stroke:#C1C9D2;
-stroke-width:1;
-stroke-linejoin:round;
+.step-shape {
+    fill: white;
+    stroke: #C1C9D2;
+    stroke-width: 1;
+    stroke-linejoin: round;
 }
+
 
 /* texto */
 
-.step-svg text{
-font-family:Poppins;
-font-size:16px;
-fill:#323334;
-pointer-events:none;
+.step-svg text {
+    font-family: Poppins;
+    font-size: 16px;
+    fill: #323334;
+    pointer-events: none;
 }
+
 
 /* activo */
 
-.class-politicas-devolucion-step.active{
-z-index:2;
+.class-politicas-devolucion-step.active {
+    z-index: 2;
 }
 
-.class-politicas-devolucion-step.active .step-shape{
-fill:#B8C1A8;
-stroke:#B8C1A8;
+.class-politicas-devolucion-step.active .step-shape {
+    fill: #B8C1A8;
+    stroke: #B8C1A8;
 }
 
-.class-politicas-devolucion-step.active text{
-fill:white;
+.class-politicas-devolucion-step.active text {
+    fill: white;
 }
 
 /* ========================================
-MOBILE
+CONTENT BOX
 ======================================== */
 
-@media (max-width:600px){
+.class-politicas-devolucion-content{
+    width:100%;
+    min-height:320px;
 
-.step-svg text{
-font-size:10px;
+    background:#F7F6F5;
+
+    margin-top:18px;
+
+    padding:35px 80px;
+
+    font-family:Poppins;
+    font-weight:400;
+    font-size:15px;
+    line-height:1.9;
+    color:#323334;
+
+    display:none;
+
+    box-sizing:border-box;
 }
 
-.class-politicas-devolucion-step:not(:first-child){
-margin-left:-8px;
+/* ACTIVO */
+
+.class-politicas-devolucion-content.active{
+    display:block;
 }
+
+/* PARRAFOS */
+
+.class-politicas-devolucion-content p{
+    margin:0;
+}
+
+/* LISTAS */
+
+.class-politicas-devolucion-content ul{
+    padding-left:28px;
+    list-style:disc;
+}
+
+.class-politicas-devolucion-content p {
+    margin-bottom: 10px;
+}
+
+/* ITEMS */
+
+.class-politicas-devolucion-content li{
+    margin-bottom:12px;
+}
+
+/* ULTIMO ITEM */
+
+.class-politicas-devolucion-content li:last-child{
+    margin-bottom:0;
+}
+
+/* TITULO */
+
+.class-politicas-devolucion-content strong{
+    display:block;
+    margin-top:20px;
+    margin-bottom:5px;
+
+    font-weight:600;
+    font-size:15px;
+    color:#323334;
+}
+
+
+/* ========================================
+LAPTOP / TABLET
+======================================== */
+
+@media (max-width:1024px) {
+
+
+    /* SECTION */
+
+
+    .class-politicas-devolucion-steps-title {
+        font-size: 28px;
+        margin: 0 -30px 35px -30px;
+    }
+
+
+    .class-politicas-devolucion {
+        padding: 70px 30px;
+    }
+
+
+    /* TITULO */
+
+    .class-politicas-devolucion-title {
+        font-size: 24px;
+        margin-bottom: 40px;
+    }
+
+
+    /* CARDS */
+
+    .class-politicas-devolucion-card {
+        min-height: auto;
+    }
+
+
+    /* TEXTO */
+
+    .class-politicas-devolucion-text {
+        padding: 25px 30px;
+        font-size: 16px;
+        line-height: 1.4;
+    }
+
+
+    /* SIDE */
+
+    .class-politicas-devolucion-side {
+        width: 220px;
+        font-size: 20px;
+        padding: 30px 20px;
+    }
+
+
+    /* PROCESO */
+
+    .class-politicas-devolucion-proceso {
+        margin-top: 70px;
+    }
+
+    .class-politicas-devolucion-proceso-title {
+        font-size: 28px;
+        margin: 0 -30px 35px -30px;
+    }
+
+
+    /* STEPS */
+
+    .step-svg text {
+        font-size: 14px;
+    }
+
+    .class-politicas-devolucion-step:not(:first-child) {
+        margin-left: -14px;
+    }
+
+}
+
+
+/* ========================================
+CELULAR
+======================================== */
+
+@media (max-width:768px) {
+
+
+    /* SECTION */
+
+    .class-politicas-devolucion-steps-title {
+        font-size: 24px;
+        line-height: 1.3;
+        padding: 18px 0;
+        margin: 0 -20px 30px -20px;
+    }
+
+    .class-politicas-devolucion {
+        padding: 60px 20px;
+        overflow: hidden;
+    }
+
+
+    /* TITULO */
+
+    .class-politicas-devolucion-title {
+        font-size: 22px;
+        line-height: 1.3;
+        margin-bottom: 35px;
+    }
+
+
+    /* CARDS */
+
+    .class-politicas-devolucion-card {
+        flex-direction: column;
+        min-height: auto;
+        border-radius: 10px;
+    }
+
+
+    /* SIDE */
+
+    .class-politicas-devolucion-side {
+        width: 100%;
+        font-size: 20px;
+        padding: 22px 20px;
+    }
+
+
+    /* TEXTO */
+
+    .class-politicas-devolucion-text {
+        width: 100%;
+        padding: 24px 20px;
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+
+    /* LISTAS */
+
+    .class-politicas-devolucion-text ul {
+        padding-left: 22px;
+    }
+
+    .class-politicas-devolucion-card:nth-child(2) .class-politicas-devolucion-text ul {
+        padding-left: 22px;
+    }
+
+
+    /* PROCESO */
+
+    .class-politicas-devolucion-proceso {
+        margin-top: 60px;
+    }
+
+    .class-politicas-devolucion-proceso-title {
+        font-size: 24px;
+        line-height: 1.3;
+        padding: 18px 0;
+        margin: 0 -20px 30px -20px;
+    }
+
+
+    /* STEPS */
+
+    .class-politicas-devolucion-steps {
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 25px;
+    }
+
+
+    /* STEP */
+
+    .class-politicas-devolucion-step {
+        width: 100%;
+        margin-left: 0 !important;
+    }
+
+
+    /* SVG */
+
+    .step-svg {
+        aspect-ratio: auto;
+        height: 58px;
+    }
+
+
+    /* TEXTO SVG */
+
+    .step-svg text {
+        font-size: 12px;
+    }
+
+
+    /* OVERFLOW */
+
+    .class-politicas-devolucion-container,
+    .class-politicas-devolucion-card,
+    .class-politicas-devolucion-text,
+    .class-politicas-devolucion-side {
+        max-width: 100%;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+}
+
+
+/* ========================================
+PC GRANDE
+======================================== */
+
+@media (min-width:1440px) {
+
+    .class-politicas-devolucion-container {
+        max-width: 1600px;
+    }
+
+    .class-politicas-devolucion-steps {
+        width: 100%;
+        max-width: 1600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    /* TITULO */
+
+    .class-politicas-devolucion-title {
+        font-size: 34px;
+        margin-bottom: 60px;
+    }
+
+
+    /* CARDS */
+
+    .class-politicas-devolucion-card {
+        min-height: 250px;
+    }
+
+
+    /* TEXTO */
+
+    .class-politicas-devolucion-text {
+        padding: 40px 50px;
+        font-size: 20px;
+        line-height: 1.4;
+    }
+
+
+    /* SIDE */
+
+    .class-politicas-devolucion-side {
+        width: 320px;
+        font-size: 26px;
+        padding: 50px 30px;
+    }
+
+
+    /* PROCESO */
+
+    .class-politicas-devolucion-proceso-title {
+        font-size: 36px;
+    }
+
+
+    /* STEPS */
+
+    .step-svg text {
+        font-size: 16px;
+    }
+
+}
+
+
+@media (min-width:1440px) and (max-width:1600px) {
+
+    .class-politicas-devolucion-step:not(:first-child) {
+        margin-left: -12px;
+    }
+
+    .step-svg text {
+        font-size: 15px;
+    }
 
 }
