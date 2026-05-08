@@ -96,3 +96,37 @@ if (header) {
     })
 }
 
+/* =========================
+SEARCH
+========================= */
+
+const search = document.querySelector(".class-header-search")
+const searchBtn = document.querySelector(".class-header-search-icon")
+const searchInput = document.querySelector(".class-header-search-input")
+
+if(searchBtn){
+
+    searchBtn.addEventListener("click",(e)=>{
+
+        e.preventDefault()
+        e.stopPropagation()
+
+        search.classList.toggle("active")
+npm
+        if(search.classList.contains("active")){
+            searchInput.focus()
+        }
+
+    })
+
+}
+
+/* CERRAR AL HACER CLICK FUERA */
+
+document.addEventListener("click",(e)=>{
+
+    if(search && !search.contains(e.target)){
+        search.classList.remove("active")
+    }
+
+})

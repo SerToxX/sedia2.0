@@ -16,10 +16,20 @@
         <!-- DERECHA -->
         <div class="class-header-right">
 
-            <!-- LUPA -->
-            <a href="/buscar" class="class-header-search-icon">
-                <img src="image/icon-search.png" alt="Buscar">
-            </a>
+            <!-- SEARCH -->
+
+            <div class="class-header-search">
+
+                <input
+                    type="text"
+                    placeholder="Buscar productos"
+                    class="class-header-search-input">
+
+                <div class="class-header-search-icon">
+                    <img src="image/icon-search.png" alt="Buscar">
+                </div>
+
+            </div>
 
             <!-- CARRITO -->
             <a href="/carrito" class="class-header-cart-icon">

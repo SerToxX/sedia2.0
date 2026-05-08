@@ -73,6 +73,21 @@ ELEMENTOS BLANCOS EN HEADER TRANSPARENTE
     border-bottom-color: #E5E5E5 !important;
 }
 
+/* ========================================
+SEARCH HEADER BLANCO
+======================================== */
+
+.class-header-scrolled .class-header-search-input{
+
+    color:#323334;
+
+    border-bottom:1px solid #D8D8D8;
+}
+
+.class-header-scrolled .class-header-search-input::placeholder{
+    color:#8D8D8D;
+}
+
 /* HEADER OCULTO */
 
 .class-header-hidden {
@@ -189,6 +204,75 @@ DERECHA
     gap: 18px;
 }
 
+/* ========================================
+SEARCH
+======================================== */
+
+.class-header-search {
+
+    position: relative;
+
+    width: 28px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    overflow: hidden;
+
+    transition: 0.35s ease;
+}
+
+/* ABIERTO */
+
+.class-header-search.active {
+
+    width: 300px;
+}
+
+/* INPUT */
+
+.class-header-search-input {
+
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+
+    padding: 0 42px 0 0;
+
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 400;
+
+    color: white;
+
+    opacity: 0;
+
+    transition: 0.3s ease;
+}
+
+/* PLACEHOLDER */
+
+.class-header-search-input::placeholder {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+/* ACTIVO */
+
+.class-header-search.active .class-header-search-input {
+    opacity: 1;
+}
+
 /* ICONOS */
 
 .class-header-search-icon,
@@ -197,6 +281,21 @@ DERECHA
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+/* ICONO SEARCH */
+
+.class-header-search-icon {
+
+    position: relative;
+    z-index: 2;
+
+    width: 28px;
+    height: 28px;
+
+    flex-shrink: 0;
+
+    cursor: pointer;
 }
 
 /* LUPA */
