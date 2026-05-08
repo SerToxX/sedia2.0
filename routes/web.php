@@ -2,42 +2,25 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactoController;
+use App\Http\Controllers\PageController;
 
-Route::get('/', function () {
-    return view('pages.home');
-})->name('inicio');
+Route::get('/', [PageController::class, 'home'])->name('inicio');
 
-Route::get('/productos', function () {
-    return view('pages.productos');
-})->name('productos');
+Route::get('/productos', [PageController::class, 'productos'])->name('productos');
 
-Route::get('/contacto', function () {
-    return view('pages.contacto.contacto');
-})->name('contacto');
+Route::get('/contacto', [ContactoController::class, 'index'])->name('contacto');
 
-Route::get('/preguntas-frecuentes', function () {
-    return view('pages.preguntas-frecuentes.preguntas-frecuentes');
-})->name('faq');
+Route::get('/preguntas-frecuentes', [PageController::class, 'preguntasFrecuentes'])->name('faq');
 
-Route::get('/terminos-condiciones', function () {
-    return view('pages.terminos-condiciones.terminos-condiciones');
-})->name('terminos');
+Route::get('/terminos-condiciones', [PageController::class, 'terminosCondiciones'])->name('terminos');
 
-Route::get('/politicas-devolucion', function () {
-    return view('pages.politicas-devolucion.politicas-devolucion');
-})->name('politicas-devolucion');
+Route::get('/politicas-devolucion', [PageController::class, 'politicasDevolucion'])->name('politicas-devolucion');
 
-Route::get('/proyectos', function () {
-    return view('pages.proyectos.proyectos');
-})->name('proyectos');
+Route::get('/proyectos', [PageController::class, 'proyectos'])->name('proyectos');
 
-Route::get('/sobre-nosotros', function () {
-    return view('pages.sobre-nosotros.sobre-nosotros');
-})->name('nosotros');
+Route::get('/sobre-nosotros', [PageController::class, 'sobreNosotros'])->name('nosotros');
 
-Route::get('/libro-reclamaciones', function () {
-    return view('pages.libro-reclamaciones.libro-reclamaciones');
-})->name('libro-reclamaciones');
+Route::get('/libro-reclamaciones', [PageController::class, 'libroReclamaciones'])->name('libro-reclamaciones');
 
 Route::post('/contacto', [ContactoController::class, 'enviar'])
     ->name('contacto.enviar');

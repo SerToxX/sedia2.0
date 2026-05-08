@@ -6,10 +6,17 @@ use Illuminate\Validation\ValidationException;
 class ContactoController extends Controller
 {
     protected $contactoService;
+
     public function __construct(ContactoService $contactoService)
     {
         $this->contactoService = $contactoService;
     }
+
+    public function index()
+    {
+        return view('pages.contacto.contacto');
+    }
+
     public function enviar(Request $request)
     {
         try {
