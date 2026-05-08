@@ -127,12 +127,11 @@
     <!-- SECCION PASOS -->
     <!-- =================================== -->
 
+    <h2 class="class-politicas-devolucion-steps-title">
+        ¿Cómo solicitar una devolución o cambio?
+    </h2>
+
     <div class="class-politicas-devolucion-container">
-
-
-        <h2 class="class-politicas-devolucion-steps-title">
-            ¿Cómo solicitar una devolución o cambio?
-        </h2>
 
 
         <div class="class-politicas-devolucion-steps">
