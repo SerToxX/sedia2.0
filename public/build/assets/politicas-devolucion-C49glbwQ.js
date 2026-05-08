@@ -1,0 +1,1 @@
+const t=document.querySelectorAll(".class-politicas-devolucion-step"),c=document.querySelectorAll(".class-politicas-devolucion-content");t.length&&c.length&&t.forEach((s,l)=>{s.addEventListener("click",()=>{t.forEach(e=>e.classList.remove("active")),c.forEach(e=>e.classList.remove("active")),s.classList.add("active"),c[l]&&c[l].classList.add("active")})});

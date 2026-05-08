@@ -1,12 +1,17 @@
 const steps = document.querySelectorAll(".class-politicas-devolucion-step")
+const contents = document.querySelectorAll(".class-politicas-devolucion-content")
 
-steps.forEach(step => {
+if (steps.length && contents.length) {
+    steps.forEach((step, index) => {
+        step.addEventListener("click", () => {
+            steps.forEach((item) => item.classList.remove("active"))
+            contents.forEach((item) => item.classList.remove("active"))
 
-step.addEventListener("click", () => {
+            step.classList.add("active")
 
-steps.forEach(s => s.classList.remove("active"))
-step.classList.add("active")
-
-})
-
-})
+            if (contents[index]) {
+                contents[index].classList.add("active")
+            }
+        })
+    })
+}

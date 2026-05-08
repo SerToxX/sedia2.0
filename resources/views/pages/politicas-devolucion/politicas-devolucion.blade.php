@@ -298,26 +298,6 @@
 
     </div>
 
-    <script>
-        const steps = document.querySelectorAll('.class-politicas-devolucion-step');
-        const contents = document.querySelectorAll('.class-politicas-devolucion-content');
-
-        steps.forEach((step, index) => {
-
-            step.addEventListener('click', () => {
-
-                steps.forEach(s => s.classList.remove('active'));
-                contents.forEach(c => c.classList.remove('active'));
-
-                step.classList.add('active');
-                contents[index].classList.add('active');
-
-            });
-
-        });
-    </script>
-
-
     @endsection
 
 
