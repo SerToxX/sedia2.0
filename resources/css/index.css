@@ -479,3 +479,176 @@ font-weight:600;
 text-decoration:line-through;
 color:#999;
 }
+
+
+/* ========================================
+   PC GRANDE
+======================================== */
+
+@media (min-width: 1440px) {
+
+    .class-benefits-container {
+        max-width: 1600px;
+    }
+
+    .class-products-grid {
+        max-width: 1600px;
+    }
+}
+
+
+/* ========================================
+   LAPTOP / TABLET
+======================================== */
+
+@media (max-width: 1024px) {
+
+    /* HERO */
+
+    .class-hero-title {
+        font-size: 72px;
+    }
+
+    /* ABOUT */
+
+    .class-about-title {
+        font-size: 38px;
+    }
+
+    /* CATEGORIAS */
+
+    .class-categories-row-top {
+        grid-template-columns: 55% 45%;
+    }
+
+    /* BENEFICIOS */
+
+    .class-benefits {
+        padding: 50px 30px;
+    }
+
+    .class-benefits-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    /* PRODUCTOS */
+
+    .class-products {
+        padding: 70px 30px;
+    }
+
+    .class-products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+}
+
+
+/* ========================================
+   CELULAR
+======================================== */
+
+@media (max-width: 768px) {
+
+    /* HERO */
+
+    .class-hero {
+        height: 75vh;
+    }
+
+    .class-hero-title {
+        font-size: 46px;
+        margin-bottom: 22px;
+    }
+
+    .class-hero-button {
+        font-size: 15px;
+        padding: 10px 22px;
+    }
+
+    /* ABOUT */
+
+    .class-about {
+        padding: 60px 20px;
+    }
+
+    .class-about-title {
+        font-size: 30px;
+        margin-bottom: 22px;
+    }
+
+    .class-about-text {
+        font-size: 16px;
+    }
+
+    /* CATEGORIAS */
+
+    .class-categories-row-top,
+    .class-categories-row-bottom {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .class-category-item {
+        height: 260px;
+    }
+
+    /* BENEFICIOS */
+
+    .class-benefits {
+        padding: 50px 20px;
+    }
+
+    .class-benefits-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+
+    /* PRODUCTOS */
+
+    .class-products {
+        padding: 60px 20px;
+    }
+
+    .class-products-title {
+        font-size: 24px;
+        margin-bottom: 40px;
+    }
+
+    .class-products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .img-main,
+    .img-hover {
+        height: 180px;
+    }
+}
+
+
+/* ========================================
+   CELULAR PEQUEÑO
+======================================== */
+
+@media (max-width: 480px) {
+
+    /* HERO */
+
+    .class-hero-title {
+        font-size: 36px;
+    }
+
+    /* BENEFICIOS */
+
+    .class-benefits-container {
+        grid-template-columns: 1fr;
+    }
+
+    /* PRODUCTOS */
+
+    .class-products-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -102,6 +102,19 @@ max-height:300px;
 RESPONSIVE
 ======================================== */
 
+@media (max-width:1024px){
+
+.class-preguntas-frecuentes{
+padding:70px 30px;
+}
+
+.class-preguntas-frecuentes-title{
+font-size:34px;
+margin-bottom:50px;
+}
+
+}
+
 @media (max-width:768px){
 
 .class-preguntas-frecuentes{

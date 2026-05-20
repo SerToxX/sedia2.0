@@ -112,6 +112,17 @@
    RESPONSIVE
 ========================= */
 
+/* PC grande */
+@media (min-width: 1440px) {
+
+.class-footer-content {
+    max-width: 1600px;
+    gap: 80px;
+}
+
+}
+
+
 
 /* Tablet vertical y móviles */
 @media (max-width:768px){
