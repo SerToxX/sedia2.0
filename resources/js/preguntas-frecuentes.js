@@ -1,21 +1,5 @@
-document.addEventListener("DOMContentLoaded", () => {
+import { initAccordion } from './utils/accordion.js';
 
-const preguntas = document.querySelectorAll(
-".class-preguntas-frecuentes-question"
-)
-
-if(!preguntas.length) return
-
-preguntas.forEach((pregunta) => {
-
-pregunta.addEventListener("click", () => {
-
-const item = pregunta.parentElement
-
-item.classList.toggle("active")
-
-})
-
-})
-
-})
+document.addEventListener('DOMContentLoaded', () =>
+    initAccordion('.class-preguntas-frecuentes-question')
+);

@@ -1,6 +1,10 @@
 {
+  "_accordion-5yLDC6ml.js": {
+    "file": "assets/accordion-5yLDC6ml.js",
+    "name": "accordion"
+  },
   "resources/css/app.css": {
-    "file": "assets/app-BWAHNEA7.css",
+    "file": "assets/app-Dr6af7qS.css",
     "src": "resources/css/app.css",
     "isEntry": true,
     "name": "app",
@@ -12,14 +16,14 @@
     "file": "assets/Phenomena-Regular-i8mSNsY-.otf",
     "src": "resources/fonts/Phenomena-Regular.otf"
   },
-  "resources/js/app.jsx": {
+  "resources/js/app.js": {
     "file": "assets/app-DVCeilCo.js",
     "name": "app",
-    "src": "resources/js/app.jsx",
+    "src": "resources/js/app.js",
     "isEntry": true
   },
   "resources/js/header.js": {
-    "file": "assets/header-CIcNvcbX.js",
+    "file": "assets/header-DyE5rYKO.js",
     "name": "header",
     "src": "resources/js/header.js",
     "isEntry": true
@@ -37,27 +41,33 @@
     "isEntry": true
   },
   "resources/js/politicas-devolucion.js": {
-    "file": "assets/politicas-devolucion-C49glbwQ.js",
+    "file": "assets/politicas-devolucion-DUbnPVsl.js",
     "name": "politicas-devolucion",
     "src": "resources/js/politicas-devolucion.js",
     "isEntry": true
   },
   "resources/js/preguntas-frecuentes.js": {
-    "file": "assets/preguntas-frecuentes-DaT_HVNR.js",
+    "file": "assets/preguntas-frecuentes-DfcXYvCS.js",
     "name": "preguntas-frecuentes",
     "src": "resources/js/preguntas-frecuentes.js",
-    "isEntry": true
+    "isEntry": true,
+    "imports": [
+      "_accordion-5yLDC6ml.js"
+    ]
   },
-  "resources/js/proyectos.js": {
-    "file": "assets/proyectos-CY9pjwt2.js",
-    "name": "proyectos",
-    "src": "resources/js/proyectos.js",
+  "resources/js/proyectos/form.js": {
+    "file": "assets/form-BB7re1CC.js",
+    "name": "form",
+    "src": "resources/js/proyectos/form.js",
     "isEntry": true
   },
   "resources/js/terminos-condiciones.js": {
-    "file": "assets/terminos-condiciones-BHVLIJM_.js",
+    "file": "assets/terminos-condiciones-C-rnbk_r.js",
     "name": "terminos-condiciones",
     "src": "resources/js/terminos-condiciones.js",
-    "isEntry": true
+    "isEntry": true,
+    "imports": [
+      "_accordion-5yLDC6ml.js"
+    ]
   }
 }

@@ -111,7 +111,7 @@ if(searchBtn){
         e.preventDefault()
         e.stopPropagation()
         search.classList.toggle("active")
-npm
+
         if(search.classList.contains("active")){
             searchInput.focus()
         }

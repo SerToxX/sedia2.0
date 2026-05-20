@@ -1,8 +1,10 @@
 @font-face {
     font-family: "Phenomena";
+    /* Convertir a WOFF2 para ~40% menos peso: fontsquirrel.com/tools/webfont-generator */
     src: url("../fonts/Phenomena-Regular.otf") format("opentype");
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
 @import 'tailwindcss';

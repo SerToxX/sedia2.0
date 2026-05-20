@@ -10,7 +10,10 @@
     <img
         src="{{ asset('image/proyectos-inicio.png') }}"
         alt="Proyectos Sedia"
-        class="class-proyectos-hero-img">
+        class="class-proyectos-hero-img"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async">
 
     <!-- CONTENIDO -->
     <div class="class-proyectos-hero-content">
@@ -39,7 +42,9 @@
             <div class="class-proyectos-info-img-wrap">
                 <img
                     src="{{ asset('image/proyecto-espacios.png') }}"
-                    class="class-proyectos-info-img">
+                    class="class-proyectos-info-img"
+                    loading="lazy"
+                    decoding="async">
             </div>
 
             <div class="class-proyectos-info-text">
@@ -83,17 +88,17 @@
             <div class="class-proyectos-negocios-grid">
 
                 <div class="class-proyectos-card">
-                    <img src="{{ asset('image/restaurantes.png') }}">
+                    <img src="{{ asset('image/restaurantes.png') }}" loading="lazy" decoding="async">
                     <span>Restaurantes</span>
                 </div>
 
                 <div class="class-proyectos-card">
-                    <img src="{{ asset('image/cafeterias.png') }}">
+                    <img src="{{ asset('image/cafeterias.png') }}" loading="lazy" decoding="async">
                     <span>Cafeterías</span>
                 </div>
 
                 <div class="class-proyectos-card">
-                    <img src="{{ asset('image/bares.png') }}">
+                    <img src="{{ asset('image/bares.png') }}" loading="lazy" decoding="async">
                     <span>Bares</span>
                 </div>
 
@@ -126,7 +131,7 @@
         </div>
 
         <div class="class-proyectos-bloque3-img-wrap">
-            <img src="{{ asset('image/proyectos-mesa.png') }}">
+            <img src="{{ asset('image/proyectos-mesa.png') }}" loading="lazy" decoding="async">
         </div>
 
     </div>
@@ -140,7 +145,7 @@
         <!-- IMAGEN -->
 
         <div class="class-proyectos-beneficios-img-wrap">
-            <img src="{{ asset('image/proyectos-beneficios.png') }}">
+            <img src="{{ asset('image/proyectos-beneficios.png') }}" loading="lazy" decoding="async">
         </div>
 
         <!-- CONTENIDO -->
@@ -267,7 +272,7 @@
 </section>
 
 @push('scripts')
-    @vite('resources/js/proyectos.js')
+    @vite('resources/js/proyectos/form.js')
 @endpush
 
 @endsection

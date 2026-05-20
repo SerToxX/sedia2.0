@@ -14,7 +14,10 @@ HERO SOBRE NOSOTROS
     <img
         src="{{ asset('image/sobre-nosotros-banner.png') }}"
         alt="Sobre Nosotros"
-        class="class-sobre-nosotros-hero-img">
+        class="class-sobre-nosotros-hero-img"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async">
 
     <!-- CONTENEDOR -->
     <div class="class-sobre-nosotros-hero-container">
@@ -162,7 +165,9 @@ HERO SOBRE NOSOTROS
 
             <img
                 src="{{ asset('image/historia-banner.png') }}"
-                alt="Historia Sedia">
+                alt="Historia Sedia"
+                loading="lazy"
+                decoding="async">
 
         </div>
 
@@ -216,7 +221,9 @@ HERO SOBRE NOSOTROS
 
             <img
                 src="{{ asset('image/servicio-banner.png') }}"
-                alt="Servicio Sedia">
+                alt="Servicio Sedia"
+                loading="lazy"
+                decoding="async">
 
         </div>
 
@@ -268,15 +275,15 @@ HERO SOBRE NOSOTROS
         <div class="class-nosotros-ambientes-grid">
 
             <div class="ambiente-img ambiente-left">
-                <img src="{{ asset('image/ambiente1.png') }}">
+                <img src="{{ asset('image/ambiente1.png') }}" loading="lazy" decoding="async">
             </div>
 
             <div class="ambiente-img ambiente-center">
-                <img src="{{ asset('image/ambiente2.png') }}">
+                <img src="{{ asset('image/ambiente2.png') }}" loading="lazy" decoding="async">
             </div>
 
             <div class="ambiente-img ambiente-right">
-                <img src="{{ asset('image/ambiente3.png') }}">
+                <img src="{{ asset('image/ambiente3.png') }}" loading="lazy" decoding="async">
             </div>
 
         </div>
@@ -307,24 +314,24 @@ HERO SOBRE NOSOTROS
 
 
         <div class="class-nosotros-project-img">
-            <img src="{{ asset('image/sedia-project-chair.png') }}">
+            <img src="{{ asset('image/sedia-project-chair.png') }}" loading="lazy" decoding="async">
         </div>
 
 
         <div class="class-nosotros-project-info">
 
             <div class="class-nosotros-project-item">
-                <img src="{{ asset('image/icons/project1.png') }}">
+                <img src="{{ asset('image/icons/project1.png') }}" loading="lazy" decoding="async">
                 <p>Proyectos a gran escala para cafeterías, restaurantes, oficinas y más.</p>
             </div>
 
             <div class="class-nosotros-project-item">
-                <img src="{{ asset('image/icons/project2.png') }}">
+                <img src="{{ asset('image/icons/project2.png') }}" loading="lazy" decoding="async">
                 <p>Acompañamiento completo guiándote en cada decisión de mobiliario.</p>
             </div>
 
             <div class="class-nosotros-project-item">
-                <img src="{{ asset('image/icons/project3.png') }}">
+                <img src="{{ asset('image/icons/project3.png') }}" loading="lazy" decoding="async">
                 <p>Implementación sin complicaciones desde el diseño hasta la instalación final.</p>
             </div>
 

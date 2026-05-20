@@ -1,0 +1,40 @@
+[33mde670f5[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m HEAD@{0}: reset: moving to HEAD~1
+[33m485dddc[m[33m ([m[1;31morigin/main[m[33m)[m HEAD@{1}: commit: Proyecto sedia v1.0
+[33mde670f5[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m HEAD@{2}: Branch: renamed refs/heads/main to refs/heads/main
+[33mde670f5[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m HEAD@{4}: commit: actualizacion de searchv0.2 y politicas-devolucion
+[33m2245198[m HEAD@{5}: commit: actualizacion de searchv0.1
+[33m8450400[m HEAD@{6}: commit: actualizacion de politicas-devolucion v.0.3
+[33m44d1c9b[m HEAD@{7}: commit: actualizacion de politicas-devolucion v.0.2
+[33mcda1924[m HEAD@{8}: commit: cambios y limpieza de los js
+[33m01eed1b[m HEAD@{9}: commit: mejora de rendimiento
+[33m45643ee[m HEAD@{10}: commit: rutas MVC - controller
+[33m7df59c1[m HEAD@{11}: commit: header.css v0.2
+[33m9db11c4[m HEAD@{12}: commit: Actualizacion de header sticky y libro-reclamaciones v0.2
+[33m571267b[m HEAD@{13}: commit: Libro de reclamaciones v0.1
+[33mcc48747[m HEAD@{14}: commit: proyectos 0.2
+[33m2903340[m HEAD@{15}: commit: actualizacion de proyectos.css
+[33m56d7f65[m HEAD@{16}: commit: Mejoras en formulario proyectos y app
+[33m346af0f[m HEAD@{17}: commit: cambios en proyectos
+[33m7fe554d[m HEAD@{18}: commit: actualizacion 21
+[33m4e3b0c7[m HEAD@{19}: commit: actualizacion
+[33md619653[m HEAD@{20}: commit: correo 1.1
+[33meec77aa[m HEAD@{21}: commit: cambios en email
+[33m57f3e9e[m HEAD@{22}: commit: email
+[33mfd9b6c8[m HEAD@{23}: commit: Actualizacion header
+[33mdc90216[m HEAD@{24}: commit: 'avances
+[33mbf13bb0[m HEAD@{25}: commit: sobre-nosotros
+[33me9e9cfe[m HEAD@{26}: commit: Actualizacion seccion proyectos
+[33mdb99c9b[m HEAD@{27}: commit: Avance proyectos 0.1
+[33m96a2826[m HEAD@{28}: commit: nuevo
+[33m1986fe6[m HEAD@{29}: commit: Actualización de politicas-devolucion.1.2
+[33m52c7841[m HEAD@{30}: commit: Actualización de politicas-devolucion.1.2
+[33me07105c[m HEAD@{31}: commit: Creación de faq
+[33mde5735a[m HEAD@{32}: commit: build assets
+[33mfc598d4[m HEAD@{33}: commit: Avance de pagina principal
+[33m9a653f8[m HEAD@{34}: commit: update styles
+[33mb22d333[m HEAD@{35}: commit: Cambios en el inicio
+[33me276602[m HEAD@{36}: commit: build vite production
+[33m7871675[m HEAD@{37}: commit: Actualización de footer - react
+[33m7ffd129[m HEAD@{38}: Branch: renamed refs/heads/main to refs/heads/main
+[33m7ffd129[m HEAD@{40}: Branch: renamed refs/heads/master to refs/heads/main
+[33m7ffd129[m HEAD@{42}: commit (initial): sedia

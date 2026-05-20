@@ -68,7 +68,7 @@
     <div class="class-categories-row class-categories-row-top">
 
         <a href="#" class="class-category-item">
-            <img src="{{ asset('image/taburetes.png') }}" alt="Taburetes">
+            <img src="{{ asset('image/taburetes.png') }}" alt="Taburetes" loading="lazy" decoding="async">
             <div class="class-category-overlay">
                 <h3>TABURETES</h3>
                 <span>Ver todos</span>
@@ -76,7 +76,7 @@
         </a>
 
         <a href="#" class="class-category-item">
-            <img src="{{ asset('image/bases.png') }}" alt="Bases">
+            <img src="{{ asset('image/bases.png') }}" alt="Bases" loading="lazy" decoding="async">
             <div class="class-category-overlay">
                 <h3>BASES</h3>
                 <span>Ver todos</span>
@@ -88,7 +88,7 @@
     <div class="class-categories-row class-categories-row-bottom">
 
         <a href="#" class="class-category-item">
-            <img src="{{ asset('image/mesas.png') }}" alt="Mesas">
+            <img src="{{ asset('image/mesas.png') }}" alt="Mesas" loading="lazy" decoding="async">
             <div class="class-category-overlay">
                 <h3>MESAS</h3>
                 <span>Ver todos</span>
@@ -96,7 +96,7 @@
         </a>
 
         <a href="#" class="class-category-item">
-            <img src="{{ asset('image/comedor.png') }}" alt="Comedor">
+            <img src="{{ asset('image/comedor.png') }}" alt="Comedor" loading="lazy" decoding="async">
             <div class="class-category-overlay">
                 <h3>COMEDOR</h3>
                 <span>Ver todos</span>
@@ -156,8 +156,8 @@ Disfruta nuestras promociones
 
 <div class="class-product-image">
 
-<img class="img-main" src="{{ asset('image/productos/silla1.png') }}" alt="Roma">
-<img class="img-hover" src="{{ asset('image/productos/silla1-hover.png') }}" alt="Roma">
+<img class="img-main" src="{{ asset('image/productos/silla1.png') }}" alt="Roma" loading="lazy" decoding="async">
+<img class="img-hover" src="{{ asset('image/productos/silla1-hover.png') }}" alt="Roma" loading="lazy" decoding="async">
 
 <button class="add-cart">
 Añadir al carrito
@@ -199,8 +199,8 @@ Comedor Exterior
 
 <div class="class-product-image">
 
-<img class="img-main" src="{{ asset('image/productos/silla2.png') }}">
-<img class="img-hover" src="{{ asset('image/productos/silla2-hover.png') }}">
+<img class="img-main" src="{{ asset('image/productos/silla2.png') }}" loading="lazy" decoding="async">
+<img class="img-hover" src="{{ asset('image/productos/silla2-hover.png') }}" loading="lazy" decoding="async">
 
 <button class="add-cart">
 Añadir al carrito
@@ -242,8 +242,8 @@ Comedor Exterior
 
 <div class="class-product-image">
 
-<img class="img-main" src="{{ asset('image/productos/silla3.png') }}">
-<img class="img-hover" src="{{ asset('image/productos/silla3-hover.png') }}">
+<img class="img-main" src="{{ asset('image/productos/silla3.png') }}" loading="lazy" decoding="async">
+<img class="img-hover" src="{{ asset('image/productos/silla3-hover.png') }}" loading="lazy" decoding="async">
 
 <button class="add-cart">
 Añadir al carrito
@@ -285,8 +285,8 @@ Comedor Exterior
 
 <div class="class-product-image">
 
-<img class="img-main" src="{{ asset('image/productos/silla4.png') }}">
-<img class="img-hover" src="{{ asset('image/productos/silla4-hover.png') }}">
+<img class="img-main" src="{{ asset('image/productos/silla4.png') }}" loading="lazy" decoding="async">
+<img class="img-hover" src="{{ asset('image/productos/silla4-hover.png') }}" loading="lazy" decoding="async">
 
 <button class="add-cart">
 Añadir al carrito
