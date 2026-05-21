@@ -17,6 +17,74 @@ class ContactoController extends Controller
         return view('pages.contacto.contacto');
     }
 
+    public function enviarContactanos(Request $request)
+    {
+        try {
+            $validated = $request->validate([
+                'nombres'   => 'required|string|max:255',
+                'apellidos' => 'required|string|max:255',
+                'correo'    => 'required|email|max:255',
+                'mensaje'   => 'required|string',
+                'celular'   => 'nullable|string|max:50',
+                'asunto'    => 'nullable|string|max:255',
+            ], [
+                'nombres.required'   => 'El campo Nombres es obligatorio.',
+                'apellidos.required' => 'El campo Apellidos es obligatorio.',
+                'correo.required'    => 'El campo Correo electrónico es obligatorio.',
+                'correo.email'       => 'El Correo electrónico no tiene un formato válido.',
+                'mensaje.required'   => 'El campo Mensaje es obligatorio.',
+            ]);
+
+            $data = [
+                'nombre'    => trim($validated['nombres'] . ' ' . $validated['apellidos']),
+                'email'     => $validated['correo'],
+                'mensaje'   => $validated['mensaje'],
+                'telefono'  => $validated['celular'] ?? null,
+                'empresa'   => $validated['asunto'] ?? null,
+                'documento' => null,
+            ];
+
+            $this->contactoService->enviarConDatos($data);
+
+            if ($request->ajax()) {
+                return response()->json(['success' => true, 'message' => 'Mensaje enviado correctamente']);
+            }
+            return back()->with('success', 'Mensaje enviado correctamente');
+
+        } catch (ValidationException $e) {
+            $errors = $e->errors();
+            $fieldLabels = [
+                'nombres'   => 'Nombres',
+                'apellidos' => 'Apellidos',
+                'correo'    => 'Correo electrónico',
+                'mensaje'   => 'Mensaje',
+            ];
+            $missingFields = [];
+            foreach (['nombres', 'apellidos', 'correo', 'mensaje'] as $rf) {
+                if (isset($errors[$rf])) {
+                    $missingFields[] = $fieldLabels[$rf];
+                }
+            }
+            if ($request->ajax()) {
+                return response()->json([
+                    'success'        => false,
+                    'message'        => 'Por favor corrige los campos marcados.',
+                    'errors'         => $errors,
+                    'missing_fields' => $missingFields,
+                ], 422);
+            }
+            throw $e;
+        } catch (\Throwable $e) {
+            if ($request->ajax()) {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'Ocurrió un error inesperado al enviar el mensaje. Intenta nuevamente.',
+                ], 500);
+            }
+            throw $e;
+        }
+    }
+
     public function enviar(Request $request)
     {
         try {

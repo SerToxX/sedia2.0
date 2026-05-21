@@ -22,5 +22,10 @@ Route::get('/sobre-nosotros', [PageController::class, 'sobreNosotros'])->name('n
 
 Route::get('/libro-reclamaciones', [PageController::class, 'libroReclamaciones'])->name('libro-reclamaciones');
 
+Route::get('/contactanos', [PageController::class, 'contactanos'])->name('contactanos');
+
 Route::post('/contacto', [ContactoController::class, 'enviar'])
     ->name('contacto.enviar');
+
+Route::post('/contactanos', [ContactoController::class, 'enviarContactanos'])
+    ->name('contactanos.enviar');

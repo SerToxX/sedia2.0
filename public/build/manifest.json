@@ -3,8 +3,12 @@
     "file": "assets/accordion-5yLDC6ml.js",
     "name": "accordion"
   },
+  "_toast-DDRwuU1U.js": {
+    "file": "assets/toast-DDRwuU1U.js",
+    "name": "toast"
+  },
   "resources/css/app.css": {
-    "file": "assets/app-Dr6af7qS.css",
+    "file": "assets/app-D5zQvTep.css",
     "src": "resources/css/app.css",
     "isEntry": true,
     "name": "app",
@@ -21,6 +25,15 @@
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true
+  },
+  "resources/js/contactanos/form.js": {
+    "file": "assets/form-XQYv61CX.js",
+    "name": "form",
+    "src": "resources/js/contactanos/form.js",
+    "isEntry": true,
+    "imports": [
+      "_toast-DDRwuU1U.js"
+    ]
   },
   "resources/js/header.js": {
     "file": "assets/header-DyE5rYKO.js",
@@ -56,10 +69,13 @@
     ]
   },
   "resources/js/proyectos/form.js": {
-    "file": "assets/form-BB7re1CC.js",
+    "file": "assets/form-Dl9GpC7J.js",
     "name": "form",
     "src": "resources/js/proyectos/form.js",
-    "isEntry": true
+    "isEntry": true,
+    "imports": [
+      "_toast-DDRwuU1U.js"
+    ]
   },
   "resources/js/terminos-condiciones.js": {
     "file": "assets/terminos-condiciones-C-rnbk_r.js",

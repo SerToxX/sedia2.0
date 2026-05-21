@@ -85,8 +85,8 @@
                 Proyectos
             </a>
 
-            <a class="class-menu-link {{ request()->routeIs('contacto') ? 'active' : '' }}"
-                href="{{ route('contacto') }}">
+            <a class="class-menu-link {{ request()->routeIs('contactanos') ? 'active' : '' }}"
+                href="{{ route('contactanos') }}">
                 Contáctanos
             </a>
 

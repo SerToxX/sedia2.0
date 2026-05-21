@@ -15,6 +15,7 @@ export default defineConfig({
                 'resources/js/politicas-devolucion.js',
                 'resources/js/proyectos/form.js',
                 'resources/js/libro-reclamaciones.js',
+                'resources/js/contactanos/form.js',
             ],
             refresh: true,
         }),

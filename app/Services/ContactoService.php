@@ -8,6 +8,18 @@ use App\Mail\ContactoMail;
 
 class ContactoService
 {
+    public function enviarConDatos(array $data): void
+    {
+        Log::info('ContactoService: Enviando contactanos', ['email' => $data['email'] ?? '']);
+        try {
+            Mail::to('cocotabo7715@gmail.com')->send(new ContactoMail($data, []));
+            Log::info('ContactoService: Correo contactanos enviado');
+        } catch (\Exception $e) {
+            Log::error('ContactoService: Error al enviar contactanos', ['error' => $e->getMessage()]);
+            throw $e;
+        }
+    }
+
     public function enviarCorreo($request)
 {
     $data = $request->only([

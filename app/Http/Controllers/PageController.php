@@ -43,4 +43,9 @@ class PageController extends Controller
     {
         return view('pages.libro-reclamaciones.libro-reclamaciones');
     }
+
+    public function contactanos()
+    {
+        return view('pages.contactanos.contactanos');
+    }
 }
