@@ -1,5 +1,12 @@
 @extends('layouts.app')
 
+@section('title', 'Políticas de Devolución')
+@section('description', 'Conoce nuestra política de cambios y devoluciones de productos Sedia.')
+
+@push('styles')
+    @vite('resources/css/politicas-devolucion.css')
+@endpush
+
 @section('content')
 
 <section class="class-politicas-devolucion">

@@ -11,24 +11,21 @@ use Illuminate\Support\Facades\Storage; // <-- agregar
 class ContactoMail extends Mailable
 {
     use Queueable, SerializesModels;
-    public $data;
-    public $archivos;
-    public function __construct($data, $archivos = [])
-    {
-        $this->data = $data;
-        $this->archivos = $archivos;
-    }
+    public function __construct(
+        public array $data,
+        public array $archivos = [],
+        private string $emailView = 'emails.contacto',
+        private string $emailSubject = 'Nuevo proyecto SEDIA'
+    ) {}
+
     public function envelope(): Envelope
     {
-        return new Envelope(
-            subject: 'Nuevo proyecto SEDIA',
-        );
+        return new Envelope(subject: $this->emailSubject);
     }
+
     public function content(): Content
     {
-        return new Content(
-            view: 'emails.contacto',
-        );
+        return new Content(view: $this->emailView);
     }
     public function attachments(): array
 {

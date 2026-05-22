@@ -708,3 +708,417 @@ CELULAR
         left: -100%;
     }
 }
+
+
+/* ========================================
+CARRITO DESPLEGABLE — OVERLAY
+======================================== */
+
+.class-desplegable-carrito-overlay {
+
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.25);
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: 0.3s;
+
+    z-index: 999;
+}
+
+/* ========================================
+CARRITO DESPLEGABLE — SIDEBAR
+======================================== */
+
+.class-desplegable-carrito-sidebar {
+
+    position: fixed;
+
+    top: 0;
+    right: -420px;
+
+    width: 420px;
+    height: 100vh;
+
+    background: white;
+
+    z-index: 1000;
+
+    display: flex;
+    flex-direction: column;
+
+    transition: right 0.35s ease;
+}
+
+/* OPEN STATES */
+
+.carrito-open .class-desplegable-carrito-sidebar {
+    right: 0;
+}
+
+.carrito-open .class-desplegable-carrito-overlay {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.carrito-open {
+    overflow: hidden;
+}
+
+/* ========================================
+CARRITO DESPLEGABLE — TOP
+======================================== */
+
+.class-desplegable-carrito-top {
+
+    height: 100px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 30px;
+
+    border-bottom: 1px solid #D8D8D8;
+}
+
+.class-desplegable-carrito-title {
+
+    font-family: "Poppins";
+    font-weight: 500;
+    font-size: 22px;
+
+    color: #141718;
+}
+
+/* CLOSE X */
+
+.class-desplegable-carrito-close {
+
+    position: relative;
+
+    width: 19px;
+    height: 19px;
+
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.class-desplegable-carrito-close::before,
+.class-desplegable-carrito-close::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 50%;
+    left: 0;
+
+    width: 19px;
+    height: 3px;
+
+    background: black;
+}
+
+.class-desplegable-carrito-close::before {
+    transform: rotate(45deg);
+}
+
+.class-desplegable-carrito-close::after {
+    transform: rotate(-45deg);
+}
+
+/* ========================================
+CARRITO DESPLEGABLE — CONTENT
+======================================== */
+
+.class-desplegable-carrito-content {
+
+    flex: 1;
+    overflow-y: auto;
+
+    padding: 0 24px;
+}
+
+/* ========================================
+CARRITO DESPLEGABLE — ITEM
+======================================== */
+
+.class-desplegable-carrito-item {
+
+    display: grid;
+    grid-template-columns: 90px 1fr auto;
+    gap: 16px;
+    align-items: center;
+
+    padding: 20px 0;
+
+    border-bottom: 1px solid #E5E5E5;
+}
+
+.class-desplegable-carrito-item-img {
+
+    width: 90px;
+    height: 90px;
+
+    object-fit: cover;
+
+    background: #F5F5F3;
+}
+
+/* INFO */
+
+.class-desplegable-carrito-item-info {
+
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.class-desplegable-carrito-item-name {
+
+    font-family: "Poppins";
+    font-weight: 500;
+    font-size: 15px;
+
+    color: #141718;
+}
+
+.class-desplegable-carrito-item-variant {
+
+    font-family: "Poppins";
+    font-weight: 400;
+    font-size: 13px;
+
+    color: #6D6D6D;
+}
+
+.class-desplegable-carrito-item-prices {
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-top: 2px;
+}
+
+.class-desplegable-carrito-item-old {
+
+    font-family: "Poppins";
+    font-size: 13px;
+
+    color: #9B9B9B;
+
+    text-decoration: line-through;
+}
+
+.class-desplegable-carrito-item-new {
+
+    font-family: "Poppins";
+    font-weight: 500;
+    font-size: 15px;
+
+    color: #141718;
+}
+
+.class-desplegable-carrito-item-discount {
+
+    font-family: "Poppins";
+    font-size: 12px;
+    font-weight: 500;
+
+    color: #D9534F;
+}
+
+/* DERECHA — DELETE + QTY */
+
+.class-desplegable-carrito-item-right {
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    height: 90px;
+}
+
+.class-desplegable-carrito-item-delete {
+
+    background: none;
+    border: none;
+    padding: 0;
+
+    color: #6D6D6D;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: color 0.2s;
+}
+
+.class-desplegable-carrito-item-delete:hover {
+    color: #D9534F;
+}
+
+/* QTY CONTROL */
+
+.class-desplegable-carrito-item-qty {
+
+    display: flex;
+    align-items: center;
+
+    border: 1px solid #D8D8D8;
+}
+
+.class-desplegable-carrito-qty-btn {
+
+    width: 30px;
+    height: 30px;
+
+    background: none;
+    border: none;
+
+    font-family: "Poppins";
+    font-size: 16px;
+    font-weight: 400;
+
+    color: #141718;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: background 0.15s;
+}
+
+.class-desplegable-carrito-qty-btn:hover {
+    background: #F5F5F3;
+}
+
+.class-desplegable-carrito-qty-num {
+
+    width: 32px;
+
+    font-family: "Poppins";
+    font-size: 14px;
+
+    text-align: center;
+
+    border-left: 1px solid #D8D8D8;
+    border-right: 1px solid #D8D8D8;
+
+    line-height: 30px;
+}
+
+/* ========================================
+CARRITO DESPLEGABLE — FOOTER
+======================================== */
+
+.class-desplegable-carrito-footer {
+
+    flex-shrink: 0;
+
+    padding: 20px 24px 28px;
+
+    border-top: 1px solid #D8D8D8;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    background: white;
+}
+
+.class-desplegable-carrito-subtotal {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    font-family: "Poppins";
+    font-weight: 500;
+    font-size: 16px;
+
+    color: #141718;
+}
+
+.class-desplegable-carrito-subtotal-count {
+    font-weight: 400;
+    font-size: 14px;
+    color: #6D6D6D;
+}
+
+.class-desplegable-carrito-subtotal-price {
+    font-weight: 600;
+}
+
+.class-desplegable-carrito-btn-ver,
+.class-desplegable-carrito-btn-comprar {
+
+    display: block;
+
+    width: 100%;
+
+    padding: 14px;
+
+    text-align: center;
+
+    font-family: "Poppins";
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 1px;
+
+    text-decoration: none;
+
+    transition: background 0.2s, color 0.2s;
+}
+
+.class-desplegable-carrito-btn-ver {
+
+    border: 1px solid #141718;
+
+    color: #141718;
+
+    background: white;
+}
+
+.class-desplegable-carrito-btn-ver:hover {
+    background: #141718;
+    color: white;
+}
+
+.class-desplegable-carrito-btn-comprar {
+
+    background: #141718;
+
+    color: white;
+
+    border: 1px solid #141718;
+}
+
+.class-desplegable-carrito-btn-comprar:hover {
+    background: #2f2f2f;
+}
+
+/* ========================================
+CARRITO DESPLEGABLE — CELULAR
+======================================== */
+
+@media (max-width: 768px) {
+
+    .class-desplegable-carrito-sidebar {
+
+        width: 100%;
+
+        right: -100%;
+    }
+}

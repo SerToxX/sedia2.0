@@ -20,13 +20,13 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>Nuevo mensaje de proyecto</h1>
-            <p>Formulario de Proyectos — SEDIA</p>
+            <h1>Nuevo mensaje de contacto</h1>
+            <p>Formulario de Contáctanos — SEDIA</p>
         </div>
         <div class="body">
 
             <div class="field">
-                <div class="label">Nombre completo</div>
+                <div class="label">Nombre</div>
                 <div class="value">{{ $data['nombre'] }}</div>
             </div>
 
@@ -35,13 +35,6 @@
                 <div class="value">{{ $data['email'] }}</div>
             </div>
 
-            @if (!empty($data['empresa']))
-            <div class="field">
-                <div class="label">Empresa</div>
-                <div class="value">{{ $data['empresa'] }}</div>
-            </div>
-            @endif
-
             @if (!empty($data['telefono']))
             <div class="field">
                 <div class="label">Teléfono / Celular</div>
@@ -49,23 +42,23 @@
             </div>
             @endif
 
-            @if (!empty($data['documento']))
+            @if (!empty($data['empresa']))
             <div class="field">
-                <div class="label">DNI / RUC</div>
-                <div class="value">{{ $data['documento'] }}</div>
+                <div class="label">Asunto</div>
+                <div class="value">{{ $data['empresa'] }}</div>
             </div>
             @endif
 
             <hr class="divider">
 
             <div class="field">
-                <div class="label">Descripción del proyecto</div>
+                <div class="label">Mensaje</div>
                 <div class="message-box value">{{ $data['mensaje'] }}</div>
             </div>
 
         </div>
         <div class="footer">
-            Este mensaje fue enviado desde el formulario de proyectos de sedia.pe
+            Este mensaje fue enviado desde el formulario de contacto de sedia.pe
         </div>
     </div>
 </body>

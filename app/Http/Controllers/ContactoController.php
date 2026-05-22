@@ -1,16 +1,14 @@
 <?php
+
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
 use App\Services\ContactoService;
 use Illuminate\Validation\ValidationException;
+
 class ContactoController extends Controller
 {
-    protected $contactoService;
-
-    public function __construct(ContactoService $contactoService)
-    {
-        $this->contactoService = $contactoService;
-    }
+    public function __construct(protected ContactoService $contactoService) {}
 
     public function index()
     {
@@ -35,16 +33,7 @@ class ContactoController extends Controller
                 'mensaje.required'   => 'El campo Mensaje es obligatorio.',
             ]);
 
-            $data = [
-                'nombre'    => trim($validated['nombres'] . ' ' . $validated['apellidos']),
-                'email'     => $validated['correo'],
-                'mensaje'   => $validated['mensaje'],
-                'telefono'  => $validated['celular'] ?? null,
-                'empresa'   => $validated['asunto'] ?? null,
-                'documento' => null,
-            ];
-
-            $this->contactoService->enviarConDatos($data);
+            $this->contactoService->enviarDesdeContactanos($validated);
 
             if ($request->ajax()) {
                 return response()->json(['success' => true, 'message' => 'Mensaje enviado correctamente']);
@@ -52,130 +41,114 @@ class ContactoController extends Controller
             return back()->with('success', 'Mensaje enviado correctamente');
 
         } catch (ValidationException $e) {
-            $errors = $e->errors();
-            $fieldLabels = [
+            return $this->handleValidationException($e, $request, [
                 'nombres'   => 'Nombres',
                 'apellidos' => 'Apellidos',
                 'correo'    => 'Correo electrónico',
                 'mensaje'   => 'Mensaje',
-            ];
-            $missingFields = [];
-            foreach (['nombres', 'apellidos', 'correo', 'mensaje'] as $rf) {
-                if (isset($errors[$rf])) {
-                    $missingFields[] = $fieldLabels[$rf];
-                }
-            }
-            if ($request->ajax()) {
-                return response()->json([
-                    'success'        => false,
-                    'message'        => 'Por favor corrige los campos marcados.',
-                    'errors'         => $errors,
-                    'missing_fields' => $missingFields,
-                ], 422);
-            }
-            throw $e;
+            ], ['nombres', 'apellidos', 'correo', 'mensaje']);
+
         } catch (\Throwable $e) {
-            if ($request->ajax()) {
-                return response()->json([
-                    'success' => false,
-                    'message' => 'Ocurrió un error inesperado al enviar el mensaje. Intenta nuevamente.',
-                ], 500);
-            }
-            throw $e;
+            return $this->handleUnexpectedException($e, $request);
         }
     }
 
     public function enviar(Request $request)
     {
         try {
-            $validated = $request->validate(
-                [
-                    'nombre' => 'required|string|max:255',
-                    'email' => 'required|email|max:255',
-                    'mensaje' => 'required|string',
-                    'empresa' => 'nullable|string|max:255',
-                    'telefono' => 'nullable|string|max:255',
-                    'documento' => 'nullable|string|max:255',
-                    'archivos' => 'nullable|array|max:20',
-                    'archivos.*' => 'nullable|file|mimes:jpg,jpeg,png,gif,pdf,doc,docx,xls,xlsx,zip,rar'
-                ],
-                [
-                    'nombre.required' => 'El campo Nombres y Apellidos es obligatorio.',
-                    'email.required' => 'El campo Email es obligatorio.',
-                    'email.email' => 'El Email no tiene un formato válido.',
-                    'mensaje.required' => 'El campo Comentanos de tu proyecto es obligatorio.',
-                    'archivos.array' => 'El formato de archivos es inválido.',
-                    'archivos.max' => 'Solo se permiten hasta 20 archivos.',
-                    'archivos.*.file' => 'Uno de los archivos no es válido.',
-                    'archivos.*.mimes' => 'Uno de los archivos tiene un tipo no permitido. Permitidos: jpg, jpeg, png, gif, pdf, doc, docx, xls, xlsx, zip, rar.'
-                ]
-            );
-            // Validación total acumulado: 15MB para todos los archivos
-            $totalBytes = 0;
-            if ($request->hasFile('archivos')) {
-                foreach ($request->file('archivos') as $archivo) {
-                    $totalBytes += $archivo->getSize();
-                }
-            }
-            $maxTotalBytes = 15 * 1024 * 1024; // 15MB
-            if ($totalBytes > $maxTotalBytes) {
+            $validated = $request->validate([
+                'nombre'     => 'required|string|max:255',
+                'email'      => 'required|email|max:255',
+                'mensaje'    => 'required|string',
+                'empresa'    => 'nullable|string|max:255',
+                'telefono'   => 'nullable|string|max:255',
+                'documento'  => 'nullable|string|max:255',
+                'archivos'   => 'nullable|array|max:20',
+                'archivos.*' => 'nullable|file|mimes:jpg,jpeg,png,gif,pdf,doc,docx,xls,xlsx,zip,rar',
+            ], [
+                'nombre.required'  => 'El campo Nombres y Apellidos es obligatorio.',
+                'email.required'   => 'El campo Email es obligatorio.',
+                'email.email'      => 'El Email no tiene un formato válido.',
+                'mensaje.required' => 'El campo Comentanos de tu proyecto es obligatorio.',
+                'archivos.array'   => 'El formato de archivos es inválido.',
+                'archivos.max'     => 'Solo se permiten hasta 20 archivos.',
+                'archivos.*.file'  => 'Uno de los archivos no es válido.',
+                'archivos.*.mimes' => 'Tipo no permitido. Permitidos: jpg, jpeg, png, gif, pdf, doc, docx, xls, xlsx, zip, rar.',
+            ]);
+
+            $archivos   = $request->file('archivos') ?? [];
+            $totalBytes = array_reduce($archivos, fn($carry, $f) => $carry + $f->getSize(), 0);
+
+            if ($totalBytes > 15 * 1024 * 1024) {
                 $totalMb = round($totalBytes / (1024 * 1024), 2);
+                $mensaje = "El total de archivos excede 15MB (actual: {$totalMb}MB).";
+
                 if ($request->ajax()) {
                     return response()->json([
-                        'success' => false,
-                        'message' => "El total de archivos excede 15MB (actual: {$totalMb}MB).",
-                        'errors' => [
-                            'archivos' => ["El total de archivos excede 15MB (actual: {$totalMb}MB)."]
-                        ],
-                        'missing_fields' => []
+                        'success'        => false,
+                        'message'        => $mensaje,
+                        'errors'         => ['archivos' => [$mensaje]],
+                        'missing_fields' => [],
                     ], 422);
                 }
-                return back()
-                    ->withErrors(['archivos' => "El total de archivos excede 15MB (actual: {$totalMb}MB)."])
-                    ->withInput();
+                return back()->withErrors(['archivos' => $mensaje])->withInput();
             }
-            $this->contactoService->enviarCorreo($request);
+
+            $this->contactoService->enviarCorreo($validated, $archivos);
+
             if ($request->ajax()) {
-                return response()->json([
-                    'success' => true,
-                    'message' => 'Mensaje enviado correctamente'
-                ]);
+                return response()->json(['success' => true, 'message' => 'Mensaje enviado correctamente']);
             }
             return back()->with('success', 'Mensaje enviado correctamente');
+
         } catch (ValidationException $e) {
-            $errors = $e->errors();
-            $fieldLabels = [
-                'nombre' => 'Nombres y Apellidos',
-                'email' => 'Email',
-                'mensaje' => 'Comentanos de tu proyecto',
-                'empresa' => 'Empresa',
-                'telefono' => 'Telefono /Celular',
+            return $this->handleValidationException($e, $request, [
+                'nombre'    => 'Nombres y Apellidos',
+                'email'     => 'Email',
+                'mensaje'   => 'Comentanos de tu proyecto',
+                'empresa'   => 'Empresa',
+                'telefono'  => 'Teléfono / Celular',
                 'documento' => 'DNI / RUC',
-                'archivos' => 'Archivos'
-            ];
-            $missingFields = [];
-            foreach (['nombre', 'email', 'mensaje'] as $requiredField) {
-                if (isset($errors[$requiredField])) {
-                    $missingFields[] = $fieldLabels[$requiredField] ?? $requiredField;
-                }
-            }
-            if ($request->ajax()) {
-                return response()->json([
-                    'success' => false,
-                    'message' => 'Por favor corrige los campos marcados.',
-                    'errors' => $errors,
-                    'missing_fields' => $missingFields
-                ], 422);
-            }
-            throw $e;
+                'archivos'  => 'Archivos',
+            ], ['nombre', 'email', 'mensaje']);
+
         } catch (\Throwable $e) {
-            if ($request->ajax()) {
-                return response()->json([
-                    'success' => false,
-                    'message' => 'Ocurrió un error inesperado al enviar el mensaje. Intenta nuevamente.'
-                ], 500);
-            }
-            throw $e;
+            return $this->handleUnexpectedException($e, $request);
         }
+    }
+
+    private function handleValidationException(
+        ValidationException $e,
+        Request $request,
+        array $fieldLabels,
+        array $requiredFields
+    ) {
+        $errors        = $e->errors();
+        $missingFields = array_values(array_filter(
+            array_map(fn($f) => isset($errors[$f]) ? ($fieldLabels[$f] ?? $f) : null, $requiredFields)
+        ));
+
+        if ($request->ajax()) {
+            return response()->json([
+                'success'        => false,
+                'message'        => 'Por favor corrige los campos marcados.',
+                'errors'         => $errors,
+                'missing_fields' => $missingFields,
+            ], 422);
+        }
+
+        throw $e;
+    }
+
+    private function handleUnexpectedException(\Throwable $e, Request $request)
+    {
+        if ($request->ajax()) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Ocurrió un error inesperado al enviar el mensaje. Intenta nuevamente.',
+            ], 500);
+        }
+
+        throw $e;
     }
 }

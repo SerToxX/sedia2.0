@@ -1,6 +1,13 @@
 @extends('layouts.app')
 
+@section('title', 'Proyectos')
+@section('description', 'Descubre cómo nuestros muebles han transformado espacios corporativos y residenciales en todo el país.')
+
 @section('body-class', 'class-proyectos-page')
+
+@push('styles')
+    @vite('resources/css/proyectos.css')
+@endpush
 
 @section('content')
 

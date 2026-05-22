@@ -21,6 +21,27 @@ overlay?.addEventListener("click",closeMenu)
 
 
 /* =========================
+CARRITO DESPLEGABLE
+========================= */
+
+const carritoBtn = document.querySelector(".class-desplegable-carrito-btn")
+const carritoClose = document.querySelector(".class-desplegable-carrito-close")
+const carritoOverlay = document.querySelector(".class-desplegable-carrito-overlay")
+
+function openCarrito(e) {
+    e.preventDefault()
+    document.body.classList.add("carrito-open")
+}
+
+function closeCarrito() {
+    document.body.classList.remove("carrito-open")
+}
+
+carritoBtn?.addEventListener("click", openCarrito)
+carritoClose?.addEventListener("click", closeCarrito)
+carritoOverlay?.addEventListener("click", closeCarrito)
+
+/* =========================
 DROPDOWN
 ========================= */
 

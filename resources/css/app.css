@@ -1,6 +1,6 @@
+/* Phenomena — convertir a WOFF2 con fontsquirrel.com/tools/webfont-generator para ~40% menos peso */
 @font-face {
     font-family: "Phenomena";
-    /* Convertir a WOFF2 para ~40% menos peso: fontsquirrel.com/tools/webfont-generator */
     src: url("../fonts/Phenomena-Regular.otf") format("opentype");
     font-weight: normal;
     font-style: normal;
@@ -8,19 +8,13 @@
 }
 
 @import 'tailwindcss';
-@import './footer.css';
+
+/* CSS globales: siempre presentes en todas las páginas */
 @import './header.css';
-@import './index.css';
-@import './preguntas-frecuentes.css';
-@import './terminos-condiciones.css';
-@import './politicas-devolucion.css';
-@import './proyectos.css';
-@import './libro-reclamaciones.css';
-@import './sobre-nosotros.css';
-@import './contactanos.css';
-@import './checkout.css';
-@import './blog.css';
-@import './listing.css';
+@import './footer.css';
+@import './toast.css';
+
+/* CSS específico de cada página se carga vía @push('styles') en cada vista */
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';

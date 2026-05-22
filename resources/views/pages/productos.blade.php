@@ -1,6 +1,13 @@
 @extends('layouts.app')
 
+@section('title', 'Productos')
+@section('description', 'Explora nuestra colección completa de sillas, taburetes, mesas y mobiliario de exterior e interior.')
+
 @section('body-class', 'class-listing-page')
+
+@push('styles')
+    @vite('resources/css/listing.css')
+@endpush
 
 @section('content')
 

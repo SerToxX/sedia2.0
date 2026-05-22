@@ -8,7 +8,7 @@
     "name": "toast"
   },
   "resources/css/app.css": {
-    "file": "assets/app-Xt8bT93a.css",
+    "file": "assets/app-BYbAR9o6.css",
     "src": "resources/css/app.css",
     "isEntry": true,
     "name": "app",
@@ -16,12 +16,111 @@
       "app.css"
     ]
   },
+  "resources/css/blog.css": {
+    "file": "assets/blog-BlJJ6FYd.css",
+    "src": "resources/css/blog.css",
+    "isEntry": true,
+    "name": "blog",
+    "names": [
+      "blog.css"
+    ]
+  },
+  "resources/css/checkout.css": {
+    "file": "assets/checkout-BNUFvmPg.css",
+    "src": "resources/css/checkout.css",
+    "isEntry": true,
+    "name": "checkout",
+    "names": [
+      "checkout.css"
+    ]
+  },
+  "resources/css/contactanos.css": {
+    "file": "assets/contactanos-BCwBkXii.css",
+    "src": "resources/css/contactanos.css",
+    "isEntry": true,
+    "name": "contactanos",
+    "names": [
+      "contactanos.css"
+    ]
+  },
+  "resources/css/index.css": {
+    "file": "assets/index-C_qIOXmk.css",
+    "src": "resources/css/index.css",
+    "isEntry": true,
+    "name": "index",
+    "names": [
+      "index.css"
+    ]
+  },
+  "resources/css/libro-reclamaciones.css": {
+    "file": "assets/libro-reclamaciones-DGxTeu4s.css",
+    "src": "resources/css/libro-reclamaciones.css",
+    "isEntry": true,
+    "name": "libro-reclamaciones",
+    "names": [
+      "libro-reclamaciones.css"
+    ]
+  },
+  "resources/css/listing.css": {
+    "file": "assets/listing-DSmdJrfZ.css",
+    "src": "resources/css/listing.css",
+    "isEntry": true,
+    "name": "listing",
+    "names": [
+      "listing.css"
+    ]
+  },
+  "resources/css/politicas-devolucion.css": {
+    "file": "assets/politicas-devolucion-ojvPtW8K.css",
+    "src": "resources/css/politicas-devolucion.css",
+    "isEntry": true,
+    "name": "politicas-devolucion",
+    "names": [
+      "politicas-devolucion.css"
+    ]
+  },
+  "resources/css/preguntas-frecuentes.css": {
+    "file": "assets/preguntas-frecuentes-XF5xEmdp.css",
+    "src": "resources/css/preguntas-frecuentes.css",
+    "isEntry": true,
+    "name": "preguntas-frecuentes",
+    "names": [
+      "preguntas-frecuentes.css"
+    ]
+  },
+  "resources/css/proyectos.css": {
+    "file": "assets/proyectos-CExuic_L.css",
+    "src": "resources/css/proyectos.css",
+    "isEntry": true,
+    "name": "proyectos",
+    "names": [
+      "proyectos.css"
+    ]
+  },
+  "resources/css/sobre-nosotros.css": {
+    "file": "assets/sobre-nosotros-u7CA7uSw.css",
+    "src": "resources/css/sobre-nosotros.css",
+    "isEntry": true,
+    "name": "sobre-nosotros",
+    "names": [
+      "sobre-nosotros.css"
+    ]
+  },
+  "resources/css/terminos-condiciones.css": {
+    "file": "assets/terminos-condiciones-GhQgb8Qt.css",
+    "src": "resources/css/terminos-condiciones.css",
+    "isEntry": true,
+    "name": "terminos-condiciones",
+    "names": [
+      "terminos-condiciones.css"
+    ]
+  },
   "resources/fonts/Phenomena-Regular.otf": {
     "file": "assets/Phenomena-Regular-i8mSNsY-.otf",
     "src": "resources/fonts/Phenomena-Regular.otf"
   },
   "resources/js/app.js": {
-    "file": "assets/app-BWRiendr.js",
+    "file": "assets/app-DOJBkqrG.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true

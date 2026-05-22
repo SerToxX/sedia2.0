@@ -1,5 +1,12 @@
 @extends('layouts.app')
 
+@section('title', 'Preguntas Frecuentes')
+@section('description', 'Resolvemos tus dudas sobre productos, envíos, garantías y devoluciones de Sedia.')
+
+@push('styles')
+    @vite('resources/css/preguntas-frecuentes.css')
+@endpush
+
 @section('content')
 
 <section class="class-preguntas-frecuentes">

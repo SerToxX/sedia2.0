@@ -1,6 +1,13 @@
 @extends('layouts.app')
 
+@section('title', 'Blog')
+@section('description', 'Artículos, tendencias y consejos sobre decoración y muebles para el hogar de parte de Sedia.')
+
 @section('body-class', 'class-blog-post-page')
+
+@push('styles')
+    @vite('resources/css/blog.css')
+@endpush
 
 @section('content')
 

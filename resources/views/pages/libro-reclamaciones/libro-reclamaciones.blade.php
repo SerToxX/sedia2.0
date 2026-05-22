@@ -1,6 +1,11 @@
-{{-- resources/views/libro-reclamaciones.blade.php --}}
-
 @extends('layouts.app')
+
+@section('title', 'Libro de Reclamaciones')
+@section('description', 'Registra tu reclamo o queja de acuerdo a la normativa peruana de protección al consumidor.')
+
+@push('styles')
+    @vite('resources/css/libro-reclamaciones.css')
+@endpush
 
 @section('content')
 

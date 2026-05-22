@@ -1,6 +1,13 @@
 @extends('layouts.app')
 
+@section('title', 'Checkout')
+@section('description', 'Completa tu pedido de Sedia de forma segura.')
+
 @section('body-class', 'class-checkout-page')
+
+@push('styles')
+    @vite('resources/css/checkout.css')
+@endpush
 
 @section('content')
 

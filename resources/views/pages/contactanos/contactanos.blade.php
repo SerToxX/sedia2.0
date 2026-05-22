@@ -1,6 +1,13 @@
 ﻿@extends('layouts.app')
 
+@section('title', 'Contáctanos')
+@section('description', 'Comunícate con nosotros por teléfono, email o WhatsApp. Estamos para resolver tus dudas rápidamente.')
+
 @section('body-class', 'class-contactanos-page')
+
+@push('styles')
+    @vite('resources/css/contactanos.css')
+@endpush
 
 @section('content')
 

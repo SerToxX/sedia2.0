@@ -1,6 +1,13 @@
 @extends('layouts.app')
 
+@section('title', 'Sobre Nosotros')
+@section('description', 'Conoce la historia y valores de Sedia, tu tienda de muebles de calidad y diseño en Perú.')
+
 @section('body-class', 'class-sobre-nosotros-page')
+
+@push('styles')
+    @vite('resources/css/sobre-nosotros.css')
+@endpush
 
 @section('content')
 

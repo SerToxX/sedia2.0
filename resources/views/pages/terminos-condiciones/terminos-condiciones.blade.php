@@ -1,5 +1,12 @@
 @extends('layouts.app')
 
+@section('title', 'Términos y Condiciones')
+@section('description', 'Conoce los términos y condiciones de uso y compra de Sedia.')
+
+@push('styles')
+    @vite('resources/css/terminos-condiciones.css')
+@endpush
+
 @section('content')
 
 <section class="class-terminos-condiciones">
