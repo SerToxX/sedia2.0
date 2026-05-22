@@ -24,8 +24,12 @@ Route::get('/libro-reclamaciones', [PageController::class, 'libroReclamaciones']
 
 Route::get('/contactanos', [PageController::class, 'contactanos'])->name('contactanos');
 
+Route::get('/checkout', [PageController::class, 'checkout'])->name('checkout');
+
 Route::post('/contacto', [ContactoController::class, 'enviar'])
     ->name('contacto.enviar');
 
 Route::post('/contactanos', [ContactoController::class, 'enviarContactanos'])
     ->name('contactanos.enviar');
+
+Route::get('/blog-post', [PageController::class, 'blogPost'])->name('blog-post');

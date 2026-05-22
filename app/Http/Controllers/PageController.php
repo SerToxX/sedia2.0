@@ -48,4 +48,14 @@ class PageController extends Controller
     {
         return view('pages.contactanos.contactanos');
     }
+
+    public function checkout()
+    {
+        return view('pages.checkout.checkout');
+    }
+
+    public function blogPost()
+    {
+        return view('pages.blog.blog-post');
+    }
 }

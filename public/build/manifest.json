@@ -8,7 +8,7 @@
     "name": "toast"
   },
   "resources/css/app.css": {
-    "file": "assets/app-BU8xRSYE.css",
+    "file": "assets/app-Xt8bT93a.css",
     "src": "resources/css/app.css",
     "isEntry": true,
     "name": "app",
@@ -21,7 +21,7 @@
     "src": "resources/fonts/Phenomena-Regular.otf"
   },
   "resources/js/app.js": {
-    "file": "assets/app-DVCeilCo.js",
+    "file": "assets/app-BWRiendr.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true

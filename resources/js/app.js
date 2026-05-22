@@ -25,4 +25,27 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!img.hasAttribute('fetchpriority')) img.setAttribute('fetchpriority', 'low');
         }
     });
+
+    const preventIfImageTarget = (event) => {
+        if (event.target.closest('img')) {
+            event.preventDefault();
+        }
+    };
+
+    document.addEventListener('contextmenu', preventIfImageTarget);
+    document.addEventListener('dragstart', preventIfImageTarget);
+
+    document.addEventListener('keydown', (event) => {
+        const key = event.key.toLowerCase();
+        const isSaveShortcut = event.ctrlKey && key === 's';
+        const isViewSourceShortcut = event.ctrlKey && key === 'u';
+
+        if (isSaveShortcut || isViewSourceShortcut) {
+            event.preventDefault();
+        }
+    });
+
+    images.forEach((img) => {
+        img.setAttribute('draggable', 'false');
+    });
 });
