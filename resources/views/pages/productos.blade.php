@@ -54,7 +54,7 @@ GRID PRODUCTOS
             <!-- CARD 1 -->
             <div class="class-listing-card">
                 <div class="class-listing-card-img-wrap">
-                    <img src="{{ asset('image/comedor.png') }}" loading="lazy" decoding="async" alt="Roma">
+                    <img src="{{ asset('image/productos/silla1.png') }}" loading="lazy" decoding="async" alt="Roma">
                 </div>
                 <div class="class-listing-card-info">
                     <div class="class-listing-card-top">

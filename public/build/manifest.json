@@ -8,7 +8,7 @@
     "name": "toast"
   },
   "resources/css/app.css": {
-    "file": "assets/app-BYbAR9o6.css",
+    "file": "assets/app-CApPNuTB.css",
     "src": "resources/css/app.css",
     "isEntry": true,
     "name": "app",
@@ -62,7 +62,7 @@
     ]
   },
   "resources/css/listing.css": {
-    "file": "assets/listing-DSmdJrfZ.css",
+    "file": "assets/listing-MjKiDEDk.css",
     "src": "resources/css/listing.css",
     "isEntry": true,
     "name": "listing",
@@ -89,7 +89,7 @@
     ]
   },
   "resources/css/proyectos.css": {
-    "file": "assets/proyectos-CExuic_L.css",
+    "file": "assets/proyectos-C5ao3N3D.css",
     "src": "resources/css/proyectos.css",
     "isEntry": true,
     "name": "proyectos",
@@ -135,7 +135,7 @@
     ]
   },
   "resources/js/header.js": {
-    "file": "assets/header-DyE5rYKO.js",
+    "file": "assets/header-DKgLWHGE.js",
     "name": "header",
     "src": "resources/js/header.js",
     "isEntry": true
