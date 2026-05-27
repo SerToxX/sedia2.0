@@ -623,7 +623,7 @@ HEADER DEL MENU
 PC
 ======================================== */
 
-@media (min-width:1440px) {
+@media (min-width:1600px) {
 
     .class-header-nav {
 
@@ -710,11 +710,57 @@ CELULAR
         gap: 14px;
     }
 
+    .class-header-search.active {
+
+        width: 200px;
+    }
+
     .class-menu-sidebar {
 
         width: 100%;
 
         left: -100%;
+    }
+}
+
+@media (max-width:480px) {
+
+    .class-header-nav {
+
+        padding: 0 14px;
+    }
+
+    .class-header-left {
+
+        font-size: 14px;
+        gap: 6px;
+    }
+
+    .class-header-menu-icon {
+
+        font-size: 16px;
+    }
+
+    .class-header-logo {
+
+        font-size: 30px;
+    }
+
+    .class-header-right {
+
+        gap: 10px;
+    }
+
+    .class-header-search.active {
+
+        width: 150px;
+    }
+
+    .class-header-cart-count {
+
+        width: 22px;
+        height: 22px;
+        font-size: 12px;
     }
 }
 

@@ -530,7 +530,7 @@ CELULAR
 PC GRANDE
 ======================================== */
 
-@media (min-width:1440px) {
+@media (min-width:1600px) {
 
     .class-politicas-devolucion-container {
         max-width: 1600px;
@@ -593,7 +593,7 @@ PC GRANDE
 }
 
 
-@media (min-width:1440px) and (max-width:1600px) {
+@media (min-width:1600px) and (max-width:1600px) {
 
     .class-politicas-devolucion-step:not(:first-child) {
         margin-left: -12px;

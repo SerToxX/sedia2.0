@@ -2,13 +2,13 @@
    VARIABLES DE COLOR
 ================================================ */
 :root {
-    --sedia-green   : #B8C1A8;
-    --sedia-dark    : #323334;
-    --sedia-opal    : #384353;
-    --sedia-white   : #FCFDFD;
-    --sedia-gray-bg : #F6F6F6;
-    --sedia-border  : #DFDEDB;
-    --sedia-muted   : #777;
+    --sedia-green: #B8C1A8;
+    --sedia-dark: #323334;
+    --sedia-opal: #384353;
+    --sedia-white: #FCFDFD;
+    --sedia-gray-bg: #F6F6F6;
+    --sedia-border: #DFDEDB;
+    --sedia-muted: #777;
 }
 
 /* ================================================
@@ -18,7 +18,8 @@
 .class-hero {
     position: relative;
     width: 100%;
-    height: 95vh;
+    /* height: 95vh; */
+    height: 854px;
     overflow: hidden;
     background: var(--sedia-opal);
     background-image: url('/image/hero.webp');
@@ -38,7 +39,7 @@
 .class-hero-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,.25);
+    background: rgba(0, 0, 0, .25);
 }
 
 .class-hero-content {
@@ -86,7 +87,7 @@
 ================================================ */
 
 .class-about {
-    padding: 90px 24px;
+    padding: 77px 24px 62px;
     text-align: center;
     background: var(--sedia-white);
 }
@@ -98,7 +99,7 @@
 
 .class-about-title {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(28px, 3.5vw, 48px);
+    font-size: clamp(28px, 4.3vw, 48px);
     font-weight: 400;
     color: var(--sedia-green);
     line-height: 1.25;
@@ -118,7 +119,7 @@
 .class-about-button {
     display: inline-block;
     padding: 10px 36px;
-    border: 1px solid var(--sedia-border);
+    border: 1px solid var(--sedia-green);
     color: var(--sedia-dark);
     text-decoration: none;
     font-family: 'Poppins', sans-serif;
@@ -153,7 +154,7 @@
     padding: 24px 16px;
     border-top: 1px solid var(--sedia-border);
     border-bottom: 1px solid var(--sedia-border);
-    margin: 0;
+    margin-bottom: 20px;
 }
 
 /* Fila 1: 65% / 35% */
@@ -161,10 +162,21 @@
     display: grid;
     gap: 0;
     height: 390px;
+    gap: 10px;
+    width: 100%;
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.class-cat-row-top    { grid-template-columns: 65fr 35fr; }
-.class-cat-row-bottom { grid-template-columns: 1fr 1fr; }
+.class-cat-row-top {
+    grid-template-columns: 65fr 35fr;
+}
+
+.class-cat-row-bottom {
+    grid-template-columns: 1fr 1fr;
+    margin-top: 10px;
+}
 
 .class-cat-item {
     position: relative;
@@ -177,7 +189,6 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
-    transition: transform .5s ease;
     display: block;
 }
 
@@ -185,12 +196,14 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,.18);
+    background: #000;
+    opacity: 0.18;
     pointer-events: none;
+    transition: opacity 1s ease;
 }
 
-.class-cat-item:hover img {
-    transform: scale(1.06);
+.class-cat-item:hover::after {
+    opacity: 0.50;
 }
 
 .class-cat-label {
@@ -201,21 +214,33 @@
     z-index: 2;
 }
 
+.class-cat-row-bottom .class-cat-label {
+    top: auto;
+    bottom: 22px;
+}
+
 .class-cat-label h3 {
     font-family: 'Poppins', sans-serif;
     font-size: 22px;
     font-weight: 700;
     letter-spacing: 3px;
-    margin: 0 0 2px;
+    margin: 0 0 -10px;
     text-transform: uppercase;
 }
 
-.class-cat-label span {
+.class-cat-link {
+    display: inline-block;
     font-family: 'Poppins', sans-serif;
     font-size: 15px;
     font-weight: 500;
+    color: #fff;
     text-decoration: underline;
     letter-spacing: 1.5px;
+    transition: color .25s ease;
+}
+
+.class-cat-link:hover {
+    color: var(--sedia-green);
 }
 
 
@@ -224,14 +249,14 @@
 ================================================ */
 
 .class-benefits {
-    padding: 60px 40px;
+    padding: 65px 110px;
     background: #fff;
 }
 
 .class-benefits-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
+    gap: 120px;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -241,8 +266,8 @@
 }
 
 .class-benefit-icon {
-    width: 52px;
-    height: 52px;
+    width: 30px;
+    height: 30px;
     margin-bottom: 18px;
 }
 
@@ -314,7 +339,7 @@
 
 .class-promo-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0,0,0,.1);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .1);
 }
 
 /* IMAGEN */
@@ -371,7 +396,7 @@
     width: 18px;
     height: 18px;
     border-radius: 0;
-    border: 1px solid rgba(0,0,0,.08);
+    border: 1px solid rgba(0, 0, 0, .08);
     flex-shrink: 0;
 }
 
@@ -432,7 +457,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,.15);
+    background: rgba(0, 0, 0, .15);
 }
 
 .class-featured-inner {
@@ -551,14 +576,16 @@
     color: #fff;
     letter-spacing: 1.4px;
     text-decoration: none;
-    border-bottom: 1px solid rgba(255,255,255,.5);
+    border-bottom: 1px solid rgba(255, 255, 255, .5);
     padding-bottom: 3px;
     width: fit-content;
     margin-top: 10px;
     transition: opacity .3s;
 }
 
-.class-sedia-link:hover { opacity: .7; }
+.class-sedia-link:hover {
+    opacity: .7;
+}
 
 .class-sedia-right {
     overflow: hidden;
@@ -709,7 +736,9 @@
     transition: color .3s;
 }
 
-.class-blog-read:hover { color: var(--sedia-dark); }
+.class-blog-read:hover {
+    color: var(--sedia-dark);
+}
 
 .class-blog-feat-img {
     display: block;
@@ -751,7 +780,9 @@
     transition: color .3s;
 }
 
-.class-blog-all:hover { color: var(--sedia-dark); }
+.class-blog-all:hover {
+    color: var(--sedia-dark);
+}
 
 /* Grid 3 columnas */
 .class-blog-grid {
@@ -919,7 +950,9 @@
     transition: opacity .3s;
 }
 
-.class-newsletter-btn:hover { opacity: .65; }
+.class-newsletter-btn:hover {
+    opacity: .65;
+}
 
 
 /* ================================================
@@ -929,13 +962,25 @@
 @media (max-width: 1024px) {
 
     /* HERO */
-    .class-hero-title { font-size: 64px; }
+    .class-hero-title {
+        font-size: 80px;
+    }
+
+    .class-benefit-icon {
+    width: 18px;
+    height: 18px;
+}
 
     /* CATEGORÍAS */
-    .class-cat-row { height: 320px; }
+    .class-cat-row {
+        height: 320px;
+    }
 
     /* BENEFICIOS */
-    .class-benefits { padding: 50px 30px; }
+    .class-benefits {
+        padding: 50px 30px;
+    }
+
     .class-benefits-grid {
         grid-template-columns: repeat(2, 1fr);
         max-width: 700px;
@@ -948,21 +993,54 @@
     }
 
     /* SEDIA PROJECT */
-    .class-sedia-project { grid-template-columns: 1fr 1fr; }
-    .class-sedia-left { padding: 60px 40px; }
-    .class-sedia-title { font-size: 36px; }
+    .class-sedia-project {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .class-sedia-left {
+        padding: 60px 40px;
+    }
+
+    .class-sedia-title {
+        font-size: 36px;
+    }
 
     /* DISEÑO */
-    .class-design { padding: 60px 40px; }
-    .class-design-collage { height: 380px; grid-template-columns: 1fr 230px; }
+    .class-design {
+        padding: 60px 40px;
+    }
+
+    .class-design-collage {
+        height: 380px;
+        grid-template-columns: 1fr 230px;
+    }
 
     /* BLOG */
     .class-blog-featured {
         padding: 50px 40px;
         grid-template-columns: 1fr 420px;
     }
-    .class-blog-feat-text { padding-right: 40px; }
-    .class-blog-img-wrap { height: 300px; }
+
+    .class-blog-feat-text {
+        padding-right: 40px;
+    }
+
+    .class-blog-img-wrap {
+        height: 300px;
+    }
+
+    .class-hero-button {
+        display: inline-block;
+        background: var(--sedia-green);
+        color: #fff;
+        text-decoration: none;
+        padding: 6px 33px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: 2px;
+        transition: background .3s;
+    }
 }
 
 
@@ -973,11 +1051,19 @@
 @media (max-width: 768px) {
 
     /* HERO */
-    .class-hero { height: 75vh; }
-    .class-hero-title { font-size: 42px; line-height: .95; }
+    .class-hero {
+        height: 75vh;
+    }
+
+    .class-hero-title {
+        font-size: 42px;
+        line-height: .95;
+    }
 
     /* ABOUT */
-    .class-about { padding: 60px 20px; }
+    .class-about {
+        padding: 60px 20px;
+    }
 
     /* CATEGORÍAS */
     .class-cat-row,
@@ -999,29 +1085,56 @@
         padding: 0 20px;
         gap: 16px;
     }
-    .class-promo-img { height: 220px; }
+
+    .class-promo-img {
+        height: 220px;
+    }
 
     /* FEATURED */
-    .class-featured { padding: 40px 20px; }
-    .class-featured-inner { gap: 24px; }
+    .class-featured {
+        padding: 40px 20px;
+    }
+
+    .class-featured-inner {
+        gap: 24px;
+    }
 
     /* SEDIA PROJECT */
-    .class-sedia-project { grid-template-columns: 1fr; }
-    .class-sedia-right { height: 320px; }
-    .class-sedia-left { padding: 50px 32px; gap: 14px; }
+    .class-sedia-project {
+        grid-template-columns: 1fr;
+    }
+
+    .class-sedia-right {
+        height: 320px;
+    }
+
+    .class-sedia-left {
+        padding: 50px 32px;
+        gap: 14px;
+    }
 
     /* DISEÑO */
-    .class-design { padding: 50px 20px; }
+    .class-design {
+        padding: 50px 20px;
+    }
+
     .class-design-collage {
         grid-template-columns: 1fr;
         height: auto;
     }
-    .class-design-main { height: 300px; }
+
+    .class-design-main {
+        height: 300px;
+    }
+
     .class-design-side {
         flex-direction: row;
         height: 200px;
     }
-    .class-design-title { font-size: 28px; }
+
+    .class-design-title {
+        font-size: 28px;
+    }
 
     /* BLOG */
     .class-blog-featured {
@@ -1029,23 +1142,44 @@
         padding: 40px 20px;
         gap: 28px;
     }
-    .class-blog-feat-text { padding-right: 0; }
-    .class-blog-feat-img { height: 280px; }
+
+    .class-blog-feat-text {
+        padding-right: 0;
+    }
+
+    .class-blog-feat-img {
+        height: 280px;
+    }
 
     .class-blog-grid {
         grid-template-columns: 1fr;
     }
+
     .class-blog-card {
         border-right: none;
         border-bottom: 1px solid var(--sedia-border);
     }
-    .class-blog-card:last-child { border-bottom: none; }
-    .class-blog-img-wrap { height: 260px; }
+
+    .class-blog-card:last-child {
+        border-bottom: none;
+    }
+
+    .class-blog-img-wrap {
+        height: 260px;
+    }
 
     /* JOBS */
-    .class-jobs { height: 380px; }
-    .class-jobs-title { font-size: 36px; }
-    .class-jobs-text { font-size: 17px; }
+    .class-jobs {
+        height: 380px;
+    }
+
+    .class-jobs-title {
+        font-size: 36px;
+    }
+
+    .class-jobs-text {
+        font-size: 17px;
+    }
 }
 
 
@@ -1056,12 +1190,24 @@
 @media (max-width: 480px) {
 
     /* HERO */
-    .class-hero-title { font-size: 32px; }
-    .class-hero-button { font-size: 15px; padding: 10px 24px; }
+    .class-hero-title {
+        font-size: 32px;
+    }
+
+    .class-hero-button {
+        font-size: 15px;
+        padding: 10px 24px;
+    }
 
     /* BENEFICIOS */
-    .class-benefits { padding: 40px 16px; }
-    .class-benefits-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+    .class-benefits {
+        padding: 40px 16px;
+    }
+
+    .class-benefits-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+    }
 
     /* PROMOS */
     .class-promos-grid {
@@ -1070,17 +1216,36 @@
     }
 
     /* SEDIA */
-    .class-sedia-title { font-size: 28px; }
+    .class-sedia-title {
+        font-size: 28px;
+    }
 
     /* DISEÑO */
-    .class-design-side { flex-direction: column; height: auto; }
-    .class-design-side img { height: 200px; flex: none; }
+    .class-design-side {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .class-design-side img {
+        height: 200px;
+        flex: none;
+    }
 
     /* BLOG */
-    .class-blog-featured { padding: 30px 16px; }
-    .class-blog-card-body { padding: 24px 16px; }
-    .class-blog-card-body h3 { font-size: 19px; }
+    .class-blog-featured {
+        padding: 30px 16px;
+    }
+
+    .class-blog-card-body {
+        padding: 24px 16px;
+    }
+
+    .class-blog-card-body h3 {
+        font-size: 19px;
+    }
 
     /* NEWSLETTER */
-    .class-newsletter { padding: 50px 20px; }
+    .class-newsletter {
+        padding: 50px 20px;
+    }
 }

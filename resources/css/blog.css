@@ -219,7 +219,7 @@
    PC GRANDE ≥ 1440px
 ======================================== */
 
-@media (min-width: 1440px) {
+@media (min-width: 1600px) {
 
     .class-blog-hero-content {
         max-width: 1440px;

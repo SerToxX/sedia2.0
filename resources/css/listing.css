@@ -214,7 +214,7 @@
    PC GRANDE ≥ 1440px
 ======================================== */
 
-@media (min-width: 1440px) {
+@media (min-width: 1600px) {
 
     .class-listing-hero-content {
         max-width: 1600px;

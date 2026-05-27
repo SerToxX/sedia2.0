@@ -69,42 +69,42 @@
     {{-- Fila 1: 65% / 35% --}}
     <div class="class-cat-row class-cat-row-top">
 
-        <a href="#" class="class-cat-item">
+        <div class="class-cat-item">
             <img src="{{ asset('image/taburetes.png') }}" alt="Taburetes" loading="lazy" decoding="async" style="object-position:center 60%">
             <div class="class-cat-label">
                 <h3>TABURETES</h3>
-                <span>Ver todos</span>
+                <a href="#" class="class-cat-link">Ver todos</a>
             </div>
-        </a>
+        </div>
 
-        <a href="#" class="class-cat-item">
+        <div class="class-cat-item">
             <img src="{{ asset('image/bases.png') }}" alt="Bases" loading="lazy" decoding="async">
             <div class="class-cat-label">
                 <h3>BASES</h3>
-                <span>Ver todos</span>
+                <a href="#" class="class-cat-link">Ver todos</a>
             </div>
-        </a>
+        </div>
 
     </div>
 
     {{-- Fila 2: 50% / 50% --}}
     <div class="class-cat-row class-cat-row-bottom">
 
-        <a href="#" class="class-cat-item">
+        <div class="class-cat-item">
             <img src="{{ asset('image/mesas.png') }}" alt="Mesas" loading="lazy" decoding="async" style="object-position:center 40%">
             <div class="class-cat-label">
                 <h3>MESAS</h3>
-                <span>Ver todos</span>
+                <a href="#" class="class-cat-link">Ver todos</a>
             </div>
-        </a>
+        </div>
 
-        <a href="#" class="class-cat-item">
+        <div class="class-cat-item">
             <img src="{{ asset('image/comedor.png') }}" alt="Comedor" loading="lazy" decoding="async" style="object-position:center 65%">
             <div class="class-cat-label">
                 <h3>COMEDOR</h3>
-                <span>Ver todos</span>
+                <a href="#" class="class-cat-link">Ver todos</a>
             </div>
-        </a>
+        </div>
 
     </div>
 
