@@ -128,15 +128,19 @@
 
 
     </div>
+</section>
 
 
-    <!-- =================================== -->
-    <!-- SECCION PASOS -->
-    <!-- =================================== -->
+<h2 class="class-politicas-devolucion-steps-title">
+    ¿Cómo solicitar una devolución o cambio?
+</h2>
 
-    <h2 class="class-politicas-devolucion-steps-title">
-        ¿Cómo solicitar una devolución o cambio?
-    </h2>
+
+<!-- =================================== -->
+<!-- SECCION PASOS -->
+<!-- =================================== -->
+
+<section class="class-politicas-devolucion-steps-section">
 
     <div class="class-politicas-devolucion-container">
 
@@ -304,6 +308,8 @@
         </div>
 
     </div>
+
+</section>
 
     @endsection
 
