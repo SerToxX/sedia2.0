@@ -27,9 +27,12 @@ CARRITO DESPLEGABLE
 const carritoBtn = document.querySelector(".class-desplegable-carrito-btn")
 const carritoClose = document.querySelector(".class-desplegable-carrito-close")
 const carritoOverlay = document.querySelector(".class-desplegable-carrito-overlay")
+let carritoOpenedAt = 0
 
 function openCarrito(e) {
     e.preventDefault()
+    e.stopPropagation()
+    carritoOpenedAt = Date.now()
     document.body.classList.add("carrito-open")
 }
 
@@ -37,9 +40,16 @@ function closeCarrito() {
     document.body.classList.remove("carrito-open")
 }
 
+function closeCarritoFromOverlay() {
+    if (Date.now() - carritoOpenedAt < 220) {
+        return
+    }
+    closeCarrito()
+}
+
 carritoBtn?.addEventListener("click", openCarrito)
 carritoClose?.addEventListener("click", closeCarrito)
-carritoOverlay?.addEventListener("click", closeCarrito)
+carritoOverlay?.addEventListener("click", closeCarritoFromOverlay)
 
 /* =========================
 DROPDOWN
@@ -75,7 +85,8 @@ if (header) {
     const transparentPages =
         document.body.classList.contains("class-home") ||
         document.body.classList.contains("class-proyectos-page") ||
-        document.body.classList.contains("class-sobre-nosotros-page")
+        document.body.classList.contains("class-sobre-nosotros-page") ||
+        document.body.classList.contains("class-listing-page")
 
     window.addEventListener("scroll", () => {
         const currentScroll = window.pageYOffset

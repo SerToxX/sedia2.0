@@ -25,7 +25,8 @@ HEADER TRANSPARENTE
 
 .class-home .class-header-container,
 .class-proyectos-page .class-header-container,
-.class-sobre-nosotros-page .class-header-container {
+.class-sobre-nosotros-page .class-header-container,
+.class-listing-page .class-header-container {
     background: transparent;
     border-bottom-color: transparent;
 }
@@ -35,7 +36,8 @@ HEADER TRANSPARENTE
 
 .class-home .class-header-container:not(.class-header-scrolled),
 .class-proyectos-page .class-header-container:not(.class-header-scrolled),
-.class-sobre-nosotros-page .class-header-container:not(.class-header-scrolled) {
+.class-sobre-nosotros-page .class-header-container:not(.class-header-scrolled),
+.class-listing-page .class-header-container:not(.class-header-scrolled) {
     background: transparent !important;
     border-bottom-color: transparent !important;
     box-shadow: none !important;
@@ -47,12 +49,15 @@ ELEMENTOS BLANCOS EN HEADER TRANSPARENTE
 .class-home .class-header-container:not(.class-header-scrolled) .class-header-left,
 .class-proyectos-page .class-header-container:not(.class-header-scrolled) .class-header-left,
 .class-sobre-nosotros-page .class-header-container:not(.class-header-scrolled) .class-header-left,
+.class-listing-page .class-header-container:not(.class-header-scrolled) .class-header-left,
 .class-home .class-header-container:not(.class-header-scrolled) .class-header-logo,
 .class-proyectos-page .class-header-container:not(.class-header-scrolled) .class-header-logo,
 .class-sobre-nosotros-page .class-header-container:not(.class-header-scrolled) .class-header-logo,
+.class-listing-page .class-header-container:not(.class-header-scrolled) .class-header-logo,
 .class-home .class-header-container:not(.class-header-scrolled) .class-header-cart-count,
 .class-proyectos-page .class-header-container:not(.class-header-scrolled) .class-header-cart-count,
-.class-sobre-nosotros-page .class-header-container:not(.class-header-scrolled) .class-header-cart-count {
+.class-sobre-nosotros-page .class-header-container:not(.class-header-scrolled) .class-header-cart-count,
+.class-listing-page .class-header-container:not(.class-header-scrolled) .class-header-cart-count {
     color: #FFFFFF;
 }
 
@@ -62,7 +67,9 @@ ELEMENTOS BLANCOS EN HEADER TRANSPARENTE
 .class-proyectos-page .class-header-container:not(.class-header-scrolled) .class-header-search-icon img,
 .class-proyectos-page .class-header-container:not(.class-header-scrolled) .class-header-cart-icon img,
 .class-sobre-nosotros-page .class-header-container:not(.class-header-scrolled) .class-header-search-icon img,
-.class-sobre-nosotros-page .class-header-container:not(.class-header-scrolled) .class-header-cart-icon img {
+.class-sobre-nosotros-page .class-header-container:not(.class-header-scrolled) .class-header-cart-icon img,
+.class-listing-page .class-header-container:not(.class-header-scrolled) .class-header-search-icon img,
+.class-listing-page .class-header-container:not(.class-header-scrolled) .class-header-cart-icon img {
     filter: brightness(0) invert(1);
 }
 
@@ -107,7 +114,8 @@ body {
 
 .class-home,
 .class-proyectos-page,
-.class-sobre-nosotros-page {
+.class-sobre-nosotros-page,
+.class-listing-page {
 
     padding-top: 0;
 }
@@ -669,7 +677,8 @@ CELULAR
 
     .class-home,
     .class-proyectos-page,
-    .class-sobre-nosotros-page {
+    .class-sobre-nosotros-page,
+    .class-listing-page {
 
         padding-top: 0;
     }
@@ -738,7 +747,7 @@ CARRITO DESPLEGABLE — SIDEBAR
     position: fixed;
 
     top: 0;
-    right: -420px;
+    right: 0;
 
     width: 420px;
     height: 100vh;
@@ -750,13 +759,14 @@ CARRITO DESPLEGABLE — SIDEBAR
     display: flex;
     flex-direction: column;
 
-    transition: right 0.35s ease;
+    transform: translateX(100%);
+    transition: transform 0.35s ease;
 }
 
 /* OPEN STATES */
 
 .carrito-open .class-desplegable-carrito-sidebar {
-    right: 0;
+    transform: translateX(0);
 }
 
 .carrito-open .class-desplegable-carrito-overlay {
@@ -1118,7 +1128,5 @@ CARRITO DESPLEGABLE — CELULAR
     .class-desplegable-carrito-sidebar {
 
         width: 100%;
-
-        right: -100%;
     }
 }
